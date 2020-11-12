@@ -13229,8 +13229,21 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In our teaching we employ interactive Jupyter notebooks in order to allow our students to play with the concepts and hence familiarize themselves more quickly with the new knowledge. Below, we give a simple example of such a script. The remainder can be found in Opal in the respective course materials.</p>
+<p><img src="https://tu-freiberg.de/sites/default/files/media/freiberger-alumni-netzwerk-6127/wbm_orig_rgb_0.jpg" alt="Logo TUBAF"></p>
+<p>In our teaching we employ interactive Jupyter notebooks in order to allow our students to play with the concepts and hence familiarize themselves more quickly with the new knowledge. Below, we give two simple examples of such scripts. The remainder can be found in Opal in the respective course materials.</p>
+<p>Comments to:</p>
+<p><em>Prof. Dr. Thomas Nagel<br>
+Chair of Soil Mechanics and Foundation Engineering<br>
+Geotechnical Institute<br>
+Technische Universität Bergakademie Freiberg.</em></p>
+<p><a href="https://tu-freiberg.de/en/soilmechanics">https://tu-freiberg.de/en/soilmechanics</a></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Beschreibung-von-Kornverteilungskurven">Beschreibung von Kornverteilungskurven<a class="anchor-link" href="#Beschreibung-von-Kornverteilungskurven">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13247,14 +13260,191 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interaction</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1">#Some plot settings</span>
 <span class="kn">import</span> <span class="nn">plot_functions.plot_settings</span>
-<span class="o">%</span><span class="k">run</span> plot_functions/Mohrs_circle_K0_plots.ipynb
+<span class="o">%</span><span class="k">run</span> plot_functions/kornverteilungskurve_plots.ipynb
 </pre></div>
 
     </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Im Zuge der Bestimmung einer Sieblinie werden Siebrückstände $m_i$ ermittelt. Die einzelnen zu den Siebdurchmessern $d_i$ gehörigen Siebrückstände $m_i$ können nun auf die Gesamtmasse $m_\text{d} = \sum m_i$ (Annahme vernachlässigbarer Siebverluste) bezogen werden, womit die Masseanteile</p>
+$$
+    x_i = \frac{m_i}{m_\text{d}}
+$$<p>ermittelt werden. Diese werden typischerweise in einer Summenkurve</p>
+$$
+    F(d_i) = \sum \limits_{k=1}^i x_i
+$$<p>aufgetragen. Dabei wird aufgrund der über Größenordnungen verteilten Korndurchmesser eine halblogarithmische Darstellung gewählt (siehe folgende Abbildung, rechts). Feinanteile, die nicht durch Siebung näher untersucht werden, sind nicht mit dargestellt. In der linken Abbildung sind die Masseanteile selbst und das zugehörige Histogramm der Masseverteilung dargestellt.</p>
+<p>Mithilfe der Körnungslinie bzw. Kornverteilungskurve können die dominierenden Bestandteile (T, U, S, G) ermittelt werden. Des weiteren können die Ungleichförmigkeitszahl</p>
+$$
+    C_U = \frac{d_{60}}{d_{10}}
+$$<p>und die Krümmungszahl</p>
+$$
+    C_C = \frac{d_{30}^2}{d_{10}\ d_{60}}
+$$<p>abgeleitet werden.</p>
+<p>Die folgenden Siebrückstände seien gegeben:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Siebdurchmesser</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">63</span><span class="p">,</span><span class="mf">31.5</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.125</span><span class="p">,</span><span class="mf">0.063</span><span class="p">,</span><span class="mf">0.001</span><span class="p">])</span><span class="c1">#letzter: Rückstand in Null</span>
+<span class="n">Startwerte</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">842.4</span><span class="p">,</span><span class="mf">1059.8</span><span class="p">,</span><span class="mf">1222.9</span><span class="p">,</span><span class="mf">788.0</span><span class="p">,</span><span class="mf">706.6</span><span class="p">,</span><span class="mf">407.6</span><span class="p">,</span><span class="mf">210.0</span><span class="p">,</span><span class="mf">195.7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">Massen</span> <span class="o">=</span> <span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">Startwerte</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">description</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">Siebdurchmesser</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; mm&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Siebdurchmesser</span><span class="p">))]</span>
+<span class="n">Eingabe</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">(</span><span class="n">Massen</span><span class="p">)</span>
+<span class="n">Eingabe</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">Neuauswertung</span><span class="p">):</span>
+    <span class="n">m_i</span> <span class="o">=</span> <span class="n">Siebmassen</span><span class="p">(</span><span class="n">Eingabe</span><span class="p">)</span>
+    <span class="n">dm_i</span> <span class="o">=</span> <span class="n">Masseanteile</span><span class="p">(</span><span class="n">m_i</span><span class="p">)</span>
+    <span class="n">sum_dm_i</span> <span class="o">=</span> <span class="n">Siebdurchgang</span><span class="p">(</span><span class="n">dm_i</span><span class="p">)</span>
+    <span class="n">plot_KVK</span><span class="p">(</span><span class="n">sum_dm_i</span><span class="p">)</span>
+
+<span class="n">interact</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">Neuauswertung</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Damit lassen sich die Masseanteile der einzelnen Kornfraktionen ablesen:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Anteilsbestimmung</span><span class="p">(</span><span class="n">Neuauswertung</span><span class="p">):</span>
+    <span class="n">a</span><span class="o">=</span><span class="n">Anteile</span><span class="p">(</span><span class="n">Siebdurchmesser</span><span class="p">,</span><span class="n">Siebdurchgang</span><span class="p">(</span><span class="n">Masseanteile</span><span class="p">(</span><span class="n">Siebmassen</span><span class="p">(</span><span class="n">Eingabe</span><span class="p">))))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+<span class="n">interact</span><span class="p">(</span><span class="n">Anteilsbestimmung</span><span class="p">,</span> <span class="n">Neuauswertung</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
 </div>
 </div>
 
@@ -13274,10 +13464,84 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
+
+<span class="c1">#Some plot settings</span>
+<span class="o">%</span><span class="k">run</span> plot_functions/Mohrs_circle_K0_plots.ipynb
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ebene-Betrachtungen">Ebene Betrachtungen<a class="anchor-link" href="#Ebene-Betrachtungen">&#182;</a></h2><p>Die folgenden Betrachtungen liegen in der $x$-$z$ Ebene und gelten für ebene Spannungszustände und ebene Verzerrungszustände mit $\sigma_{yy} = \sigma_2$.</p>
+<p>Zusätzlich legen wir $\sigma_{zz}$ beliebig, aber ohne Einschränkung der Allgemeingültigkeit, zu 200 kPa fest.</p>
+<p>Im kohäsionslosen Boden ergibt sich aus dem Mohr-Coulomb'schen Bruchkriterium:</p>
+$$
+\displaystyle\frac{1-\sin\phi}{1+\sin \phi} \sigma_{zz} &lt; \sigma_{xx} &lt; \frac{1+\sin\phi}{1-\sin \phi} \sigma_{zz}
+$$<p>mit</p>
+\begin{align*}
+    K_{0\text{a}} &amp;= \displaystyle\frac{1-\sin\phi}{1+\sin \phi}
+    \\\\
+    K_{0\text{p}} &amp;= \displaystyle \frac{1+\sin\phi}{1-\sin \phi}
+\end{align*}
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s_zz</span> <span class="o">=</span> <span class="mf">200.</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_interactive_K0</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
 </div>
 </div>
 
@@ -13325,6 +13589,23 @@ $$
 
 </div>
 
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
