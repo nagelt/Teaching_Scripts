@@ -15,5 +15,13 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Mohr's circle and K_0](Mohrs_circle_K0.html)
 
+[Compressibility of pore fluids](compressibility_pore_fluid.html)
+
+[Consolidation theory -- instantaneous load](consolidation_analytical.html)
+
+[Consolidation theory -- ramp load](consolidation_analytical_ramp.html)
+
+[Consolidation of layered soil -- finite difference scheme](Terzaghi_FD.html)
+
 
 
