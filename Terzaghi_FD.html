@@ -13253,7 +13253,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="c1">#import concurrent.futures as cf</span>
+<span class="kn">import</span> <span class="nn">concurrent.futures</span> <span class="k">as</span> <span class="nn">cf</span>
 
 <span class="c1">#Some plot settings</span>
 <span class="kn">import</span> <span class="nn">plot_functions.plot_settings</span>
@@ -13424,7 +13424,7 @@ $$<p>which are assumed to vary linearly here between an upper and a lower value.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_and_plot_simulation</span><span class="p">(</span><span class="n">u_0</span><span class="p">,</span><span class="n">Cv_1</span><span class="p">,</span><span class="n">Cv_2</span><span class="p">,</span><span class="s1">&#39;Mehrschichtproblem_Rechteck.pdf&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_and_plot_simulation_CF</span><span class="p">(</span><span class="n">u_0</span><span class="p">,</span><span class="n">Cv_1</span><span class="p">,</span><span class="n">Cv_2</span><span class="p">,</span><span class="s1">&#39;Mehrschichtproblem_Rechteck.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13486,7 +13486,7 @@ $$<p>which are assumed to vary linearly here between an upper and a lower value.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_and_plot_simulation</span><span class="p">(</span><span class="n">u_0</span><span class="p">,</span><span class="n">Cv_1</span><span class="p">,</span><span class="n">Cv_2</span><span class="p">,</span><span class="s1">&#39;Mehrschichtproblem_inverses_Dreieck.pdf&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_and_plot_simulation_CF</span><span class="p">(</span><span class="n">u_0</span><span class="p">,</span><span class="n">Cv_1</span><span class="p">,</span><span class="n">Cv_2</span><span class="p">,</span><span class="s1">&#39;Mehrschichtproblem_inverses_Dreieck.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13548,7 +13548,7 @@ $$<p>which are assumed to vary linearly here between an upper and a lower value.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_and_plot_simulation</span><span class="p">(</span><span class="n">u_0</span><span class="p">,</span><span class="n">Cv_1</span><span class="p">,</span><span class="n">Cv_2</span><span class="p">,</span><span class="s1">&#39;Mehrschichtproblem_Dreieck.pdf&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">run_and_plot_simulation_CF</span><span class="p">(</span><span class="n">u_0</span><span class="p">,</span><span class="n">Cv_1</span><span class="p">,</span><span class="n">Cv_2</span><span class="p">,</span><span class="s1">&#39;Mehrschichtproblem_Dreieck.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
