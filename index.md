@@ -11,6 +11,8 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Kornverteilungskurve](kornverteilungskurve.html)
 
+[Schnittreaktionen im einachsigen Druckversuch](Schnittreaktionen.html)
+
 [Mohr's circle](Mohrs_circle.html)
 
 [Mohr's circle and K_0](Mohrs_circle_K0.html)
