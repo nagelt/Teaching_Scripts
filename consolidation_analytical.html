@@ -13286,13 +13286,13 @@ $$<p><strong>Für ein inkompressibles Fluid ergibt sich $p_0 = q_0$.</strong></p
     \Delta u(z=H) = 0 \qquad \left. \frac{\partial \Delta u}{\partial z} \right|_{z=0,t} = 0
 \end{align*}<p>Dann gilt die analytische Lösung:</p>
 \begin{align*}
-    \Delta u(z,t) &amp;= \frac{4p_0}{\pi} \sum \limits_{i=0}^{\infty} \left\{ \frac{(-1)^i}{2i+1} \cos\left[ (2i+1) \frac{\pi}{2}\frac{z}{H} \right] \exp \left[ -(2i+1)^2 \frac{\pi^2}{4} \frac{C_\text{V}t}{h^2} \right] \right\}
+    \Delta u(z,t) &amp;= \frac{4p_0}{\pi} \sum \limits_{i=0}^{\infty} \left\{ \frac{(-1)^i}{2i+1} \cos\left[ (2i+1) \frac{\pi}{2}\frac{z}{H} \right] \exp \left[ -(2i+1)^2 \frac{\pi^2}{4} \frac{c_\text{v}t}{h^2} \right] \right\}
 \end{align*}<p>bzw. in dimensionloser Form</p>
 \begin{align*}
     \Delta \bar{u}(\zeta, T_\text{V}) &amp;= \frac{4}{\pi} \sum \limits_{i=0}^{\infty} \left\{ \frac{(-1)^i}{2i+1} \cos\left[ (2i+1) \frac{\pi}{2}\zeta \right] \exp \left[ -(2i+1)^2 \frac{\pi^2}{4} T_\text{V} \right] \right\}
 \end{align*}<p>mit</p>
 \begin{equation*}
-    \Delta \bar{u} = \frac{\Delta u}{p_0} \qquad \zeta = \frac{z}{H} \qquad T_\text{V} = \frac{C_\text{V}t}{h^2}
+    \Delta \bar{u} = \frac{\Delta u}{p_0} \qquad \zeta = \frac{z}{H} \qquad T_\text{V} = \frac{c_\text{v}t}{h^2}
 \end{equation*}<p>Bei gegebenem Strömungsdruck $\Delta u$ können wir nun auch die Effektivspannungsänderung berechnen:</p>
 $$
     \Delta \sigma'(z,t) = \Delta \sigma - \Delta u(z,t)
@@ -13424,7 +13424,7 @@ $$<p>Im vorliegenden Fall (rechteckförmige Nullisochrone) sind Sofort- und Ends
     0.01 &amp;= \frac{8}{\pi^2} \exp \left[ - \frac{\pi^2}{4} T_\text{V} \right] \qquad \rightarrow \qquad T_\text{V} = 1.78... \approx 2
 \end{align*}<p>Damit ergibt sich die Zeit, nach der eine Konsolidation zu 99% abgeschossen ist, zu</p>
 \begin{align*}
-    t_{0.99} = 2 \frac{H^2}{C_\text{V}} = 2 \frac{H^2\gamma_\text{w}(1 + E_\text{s} \beta_\text{F} n)}{E_\text{s} k_\text{f}}
+    t_{0.99} = 2 \frac{H^2}{c_\text{v}} = 2 \frac{H^2\gamma_\text{w}(1 + E_\text{s} \beta_\text{F} n)}{E_\text{s} k_\text{f}}
 \end{align*}<p>Je steifer der Boden und je höher seine Durchlässigkeit, umso schneller konsolidiert er. Das Vorhandensein kompressibler Fluide verlangsamt den Prozess.</p>
 
 </div>

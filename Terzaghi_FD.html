@@ -13269,7 +13269,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="One-dimensional-consolidation-(Terzaghi):-finite-difference-solution">One-dimensional consolidation (Terzaghi): finite difference solution<a class="anchor-link" href="#One-dimensional-consolidation-(Terzaghi):-finite-difference-solution">&#182;</a></h1><h2 id="Governing-differential-equation">Governing differential equation<a class="anchor-link" href="#Governing-differential-equation">&#182;</a></h2><p>The equation is akin to a diffusion equation</p>
 $$
-    \frac{\partial u}{\partial t} = C_\text{V} \frac{\partial^2 u}{\partial z^2}
+    \frac{\partial u}{\partial t} = c_\text{v} \frac{\partial^2 u}{\partial z^2}
 $$<p>In the present case we consider that the layer is sealed at the bottom and draining through the top.</p>
 
 </div>
@@ -13299,7 +13299,7 @@ $$
     \frac{\partial u}{\partial t} \approx \frac{\Delta u}{\Delta t} = \frac{u_i^{t+\Delta t} - u_i^t}{\Delta t}
 $$<p>Our partial differential equation has now transformed into a finite difference equation evaluated at a series of points $i$ as:</p>
 $$
-    \frac{u_i^{t+\Delta t} - u_i^t}{\Delta t} = C_\text{V} \frac{u_{i+1}^t - 2 u_i^t + u_{i-1}^t}{\Delta z^2}
+    \frac{u_i^{t+\Delta t} - u_i^t}{\Delta t} = c_\text{v} \frac{u_{i+1}^t - 2 u_i^t + u_{i-1}^t}{\Delta z^2}
 $$
 </div>
 </div>
@@ -13308,10 +13308,10 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Thus, we find the solution at the next time step directly from the old solution:</p>
 $$
-    u_i^{t+\Delta t} = u_i^t + C_\text{V} \frac{\Delta t}{\Delta z^2} \left( u_{i+1}^t - 2 u_i^t + u_{i-1}^t \right)
+    u_i^{t+\Delta t} = u_i^t + c_\text{v} \frac{\Delta t}{\Delta z^2} \left( u_{i+1}^t - 2 u_i^t + u_{i-1}^t \right)
 $$<p>or in dimensionless form:</p>
 $$
-    u_i^{\tau+\Delta \tau} = u_i^\tau + C_\text{V} \frac{\Delta \tau}{\Delta \zeta^2} \left( u_{i+1}^\tau - 2 u_i^\tau + u_{i-1}^\tau \right)
+    u_i^{\tau+\Delta \tau} = u_i^\tau + c_\text{v} \frac{\Delta \tau}{\Delta \zeta^2} \left( u_{i+1}^\tau - 2 u_i^\tau + u_{i-1}^\tau \right)
 $$
 </div>
 </div>
@@ -13338,7 +13338,7 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Next, we set the location-specific consolidation coefficient (bottom and top layer). Since we use an explicit scheme, the stability requirement</p>
 $$
-    \Delta t &lt; \frac{\Delta z^2}{2C_\text{V}}
+    \Delta t &lt; \frac{\Delta z^2}{2c_\text{v}}
 $$<p>must be met.</p>
 
 </div>
