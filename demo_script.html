@@ -13451,7 +13451,7 @@ $$<p>abgeleitet werden.</p>
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Schranken-f&#252;r-$K_0$-aus-dem-Mohr'schen-Spannungskreis">Schranken f&#252;r $K_0$ aus dem Mohr'schen Spannungskreis<a class="anchor-link" href="#Schranken-f&#252;r-$K_0$-aus-dem-Mohr'schen-Spannungskreis">&#182;</a></h1>
+<h1 id="Aktive-und-passive-Erddr&#252;cke-aus-dem-Mohr'schen-Spannungskreis">Aktive und passive Erddr&#252;cke aus dem Mohr'schen Spannungskreis<a class="anchor-link" href="#Aktive-und-passive-Erddr&#252;cke-aus-dem-Mohr'schen-Spannungskreis">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13484,12 +13484,12 @@ $$
 \displaystyle\frac{1-\sin\phi}{1+\sin \phi} \sigma_{zz} &lt; \sigma_{xx} &lt; \frac{1+\sin\phi}{1-\sin \phi} \sigma_{zz}
 $$<p>mit</p>
 \begin{align*}
-    K_{0\text{a}} &amp;= \displaystyle\frac{1-\sin\phi}{1+\sin \phi}
+    K_{\text{a}} &amp;= \displaystyle\frac{1-\sin\phi}{1+\sin \phi}
     \\\\
-    K_{0\text{p}} &amp;= \displaystyle \frac{1+\sin\phi}{1-\sin \phi}
+    K_{\text{p}} &amp;= \displaystyle \frac{1+\sin\phi}{1-\sin \phi}
 \end{align*}<p>In kohäsiven Böden ergibt sich in analoger Betrachtungsweise der von den aktiven und passiven Grenzzuständen begrenzte Horizontalspannungsbereich</p>
 $$
-K_{0\text{a}} \sigma_{zz} - 2c \sqrt{K_{0\text{a}}} &lt; \sigma_{xx} &lt; K_{0\text{p}} \sigma_{zz} + 2c \sqrt{K_{0\text{p}}}
+K_{\text{a}} \sigma_{zz} - 2c \sqrt{K_{\text{a}}} &lt; \sigma_{xx} &lt; K_{\text{p}} \sigma_{zz} + 2c \sqrt{K_{\text{p}}}
 $$
 </div>
 </div>
@@ -13596,6 +13596,12 @@ $$
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Aktiver-Erddruck-mit-Linienbruch">Aktiver Erddruck mit Linienbruch<a class="anchor-link" href="#Aktiver-Erddruck-mit-Linienbruch">&#182;</a></h2>
+</div>
+</div>
+</div>
 
   
 
@@ -13605,14 +13611,55 @@ $$
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> plot_functions/earth_pressure_plots.ipynb
+<span class="n">plot_interactive_earth_pressure</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
   </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tasks">Tasks<a class="anchor-link" href="#Tasks">&#182;</a></h2><ul>
+<li>Compare the numbers you get to results obtained from the analytical expressions you find in the current norm.</li>
+<li>Investigate the influence of the different parameters.</li>
+<li>What happens at very high cohesion values? What does this mean?</li>
+<li>How high can a cohesive vertical slope be roughly? Select suitable parameters to answer this question.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://raw.githubusercontent.com/nagelt/Teaching_Scripts/master/Images/Erddruck.png" alt="Erddruck.png"></p>
+
+</div>
+</div>
+</div>
 
 
 
