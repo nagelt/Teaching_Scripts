@@ -13305,50 +13305,11 @@ $$<p>lösen wir zunächst nach den Eigenwerten mittels des charakteristischen Po
 $$
     \det (\sigma_{ij} - \sigma_a \delta_{ij}) = 0
 $$<p>Danach lassen sich die Eigenvektoren identifizieren.</p>
+<p>Die Spannungszustände lassen sich nun aufgrund der bekannten Hauptspannungen sowie deren Wirkungsrichtungen als Ellipsoide visualisieren.</p>
 
 </div>
 </div>
 </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sigma_ij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">],</span>
-                     <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">3.2</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">],</span>
-                     <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.8</span><span class="p">]])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sigma_a</span><span class="p">,</span> <span class="n">v_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">sigma_ij</span><span class="p">)</span>
-<span class="c1">#sorting by size</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="n">sigma_a</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">sigma_a</span> <span class="o">=</span> <span class="n">sigma_a</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-<span class="n">v_a</span> <span class="o">=</span> <span class="n">v_a</span><span class="p">[:,</span><span class="n">idx</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
 
   
 
