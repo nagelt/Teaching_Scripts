@@ -15,6 +15,8 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Schnittreaktionen im einachsigen Druckversuch](Schnittreaktionen.html)
 
+[Hauptspannungen](Hauptspannungen.html)
+
 [Mohr's circle](Mohrs_circle.html)
 
 [Mohr's circle and earth pressures](Mohrs_circle_K0.html)
