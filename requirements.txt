@@ -5,4 +5,5 @@ ipywidgets
 sympy
 pandas
 futures
+ipympl
 
