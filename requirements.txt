@@ -5,5 +5,4 @@ ipywidgets
 sympy
 pandas
 futures
-mpl_toolkits
 
