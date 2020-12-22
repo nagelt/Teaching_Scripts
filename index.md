@@ -15,7 +15,7 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Schnittreaktionen im einachsigen Druckversuch](Schnittreaktionen.html)
 
-[Hauptspannungen](https://hub.gke2.mybinder.org/user/nagelt-teaching_scripts-tkp18buj/notebooks/Hauptspannungen.ipynb)
+[Hauptspannungen](Hauptspannungen.html)
 
 [Mohr's circle](Mohrs_circle.html)
 
