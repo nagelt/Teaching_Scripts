@@ -6,4 +6,5 @@ sympy
 pandas
 futures
 ipympl
+seaborn
 
