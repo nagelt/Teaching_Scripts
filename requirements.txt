@@ -8,4 +8,5 @@ futures
 ipympl
 seaborn
 display
+Latex
 
