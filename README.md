@@ -29,5 +29,7 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Consolidation of layered soil -- finite difference scheme](Terzaghi_FD.html)
 
-[Active earth pressure](active_earth_pressure.html)
+[Active earth pressure, Coulomb](active_earth_pressure.html)
+
+[Earth pressure, Rankine](Rankine.html)
 
