@@ -7,4 +7,5 @@ pandas
 futures
 ipympl
 seaborn
+display
 
