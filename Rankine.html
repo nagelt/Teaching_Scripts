@@ -13264,7 +13264,6 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 
 <span class="c1">#Some plot settings</span>
 <span class="kn">import</span> <span class="nn">plot_functions.plot_settings</span>
@@ -13313,7 +13312,7 @@ $$
 $$<p>Des weiteren kennen wir die Coulomb'sche Grenzbedingung für den Boden</p>
 $$
     \tau_\text{f} = c + \sigma_\text{n} \tan \varphi
-$$<p>Beides zeichnen wir in die $\tau-\sigma_\text{n}$ Ebene:</p>
+$$<p>Beides zeichnen wir in die $\tau-\sigma_\text{n}$ Ebene und wählen dafür o.E.d.A. $\sigma_\text{n}^\beta = \gamma z$:</p>
 
 </div>
 </div>
@@ -13597,7 +13596,8 @@ $$<p>Ebenso wie die Gleitebenen folgen sofort die Hauptspannungsebenen aus der P
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">summary_interactive</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> plot_functions/Rankine_plots.ipynb
+<span class="n">summary_interactive_dual</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13629,10 +13629,29 @@ $$<p>Ebenso wie die Gleitebenen folgen sofort die Hauptspannungsebenen aus der P
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Man erkennt, dass die Gleitlinien sich symmetrisch um die Hauptspannungsrichtungen anordnen, und mit der Richtung der größten Hauptspannung jeweils einen Winkel von $\pm (\pi/4 - \varphi/2)$ einschließen.</p>
+<p>Die Rankinelösung bleibt hinsichtlich ihrer Anwendung auf wenige Sonderfälle beschränkt.</p>
+<p><img src="https://raw.githubusercontent.com/nagelt/Teaching_Scripts/master/Images/Rankine.png" alt="Rankine.png"></p>
 
 </div>
 </div>
 </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+  </div>
 
 
 
