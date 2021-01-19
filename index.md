@@ -17,7 +17,7 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Hauptspannungen](Hauptspannungen.html)
 
-[Mohr's circle](Mohrs_circle.html)
+[Mohr's circle and safety factors](Mohrs_circle.html)
 
 [Triaxialversuch](Triaxialversuch.html)
 

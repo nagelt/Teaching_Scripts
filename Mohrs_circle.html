@@ -13529,7 +13529,7 @@ $$
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Festigkeitsreduktion">Festigkeitsreduktion<a class="anchor-link" href="#Festigkeitsreduktion">&#182;</a></h2><p>Die Scherspannung auf einer Bruchfläche folgt der Relation</p>
+<h2 id="Definition-von-Sicherheitsfaktoren,-Festigkeitsreduktion">Definition von Sicherheitsfaktoren, Festigkeitsreduktion<a class="anchor-link" href="#Definition-von-Sicherheitsfaktoren,-Festigkeitsreduktion">&#182;</a></h2><p>Die Scherspannung auf einer Bruchfläche folgt der Relation</p>
 $$
     \tau_\text{f} = c + \sigma_\text{n} \tan \varphi
 $$<p>Dazu gehören die Bruchspannungen $\sigma^*, \tau^*$ auf der Bruchfläche bzw. die Bruchhauptspannung $\sigma_\text{1f}$.</p>
@@ -13537,13 +13537,62 @@ $$<p>Dazu gehören die Bruchspannungen $\sigma^*, \tau^*$ auf der Bruchfläche b
 $$
     \tau_\text{f,red} = \frac{c}{F} + \sigma_\text{n} \frac{\tan \varphi}{F} = c_\text{red} + \sigma_\text{n} \tan \varphi_\text{red}
 $$<p>Durch die Veränderung von $\varphi_\text{red}$ ergibt sich auch eine veränderte Neigung der kritischen Bruchfläche. Dieses Vorgehen entspricht der unten dargestellten $\varphi-c$ Reduktion bzw. dem Rechnen mit reduzierten Scherfestigkeitsparametern. Ergebnis sind die Bruchspannungen $\sigma^*_\text{r}, \tau^*_\text{r}$ auf der Bruchfläche bzw. die Bruchhauptspannung $\sigma_\text{1f,red}$.</p>
-<p>Zusätzlich dargestellt ist die Überlegung, die auf der durch $\varphi$ vorgegebenen kritischen Gleitfläche wirkende Bruchspannung mit einem Sicherheitsfaktor zu belegen, und diejenige Scherspannung zu identifizieren, die auf dieser Bruchfläche dem Sicherheitsfaktor entspricht. Wir skalieren also das durch $\sigma^*, \tau^*$ vorgegebene Dreieck unter Ähnlichkeit herunter, der reduzierte Spannungszustand folgt somit der Pollinie (Beibehaltung der Bruchflächenorientierung). Entsprechend ergibt sich die zur reduzierten Scherspannung</p>
+<p>Wir stellen die zugehörigen Spannungsmaße zunächst für den Fall der im Triaxialversuch konstant gehaltenen Mantelspannung $\sigma_3$ dar. Anschließend widmen wir uns dem Fall der konstanten Normalspannung auf der Bruchfläche, $\sigma_\text{n}$.</p>
+<h3 id="Darstellung-bei-$\sigma_3-=-\text{const.}$">Darstellung bei $\sigma_3 = \text{const.}$<a class="anchor-link" href="#Darstellung-bei-$\sigma_3-=-\text{const.}$">&#182;</a></h3><p>Zusätzlich dargestellt ist die Überlegung, die auf der durch $\varphi$ vorgegebenen kritischen Gleitfläche wirkende Bruchspannung mit einem Sicherheitsfaktor zu belegen, und diejenige Scherspannung zu identifizieren, die auf dieser Bruchfläche dem Sicherheitsfaktor entspricht. Wir skalieren also das durch $\sigma^*, \tau^*$ vorgegebene Dreieck unter Ähnlichkeit herunter, der reduzierte Spannungszustand folgt somit der Pollinie (Beibehaltung der Bruchflächenorientierung). Entsprechend ergibt sich die zur reduzierten Scherspannung</p>
 $$
     \tau^*_\text{plane} = \frac{\tau^*}{F}
 $$<p>gehörige Normalspannung bzw. Hauptbruchspannung</p>
 $$
     \sigma^*_\text{plane} = \sigma_3 + \frac{\sigma^* - \sigma_3}{F} \qquad \sigma_\text{1f,plane} = \sigma_3 + \frac{\sigma_{1f} - \sigma_3}{F}
-$$<p>Die folgende Abbildung gibt einen Eindruck der Unterschiede beider Vorgehensweisen. Für geringe Sicherheitsfaktoren verschwinden die Unterschiede. Da die Reduktion der Festigkeitsparameter auch den Reibungswinkel reduziert, liegt dieses Vorgehen auf der sicheren Seite (liefert zu $F$ geringere zulässige Belastungen).</p>
+$$<p>Die folgende Abbildung gibt einen Eindruck der Unterschiede beider Vorgehensweisen. Für geringe Sicherheitsfaktoren verschwinden die Unterschiede. Da die Reduktion der Festigkeitsparameter auch den Reibungswinkel reduziert, liegt dieses Vorgehen auf der sicheren Seite (liefert zu $F$ geringere zulässige Belastungen). Wir sehen auch, dass sich nicht nur die Schubspannung, sondern auch die Normalspannung auf der Bruchfläche ändert. Daher wollen wir im nächsten Beispiel den Fall $\sigma_\text{n} = \text{const.}$ untersuchen.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_interactive_safety</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Darstellung-bei-$\sigma_\text{n}-=-\text{const.}$">Darstellung bei $\sigma_\text{n} = \text{const.}$<a class="anchor-link" href="#Darstellung-bei-$\sigma_\text{n}-=-\text{const.}$">&#182;</a></h3><p>Die obigen Überlegungen können analog wiederholt werden, wenn die auf der Scherfläche wirkende (effektive) Normalspannung $\sigma_\text{n}$ konstant gehalten wird. Bildlich gesprochen bedeuted das in beiden Fällen ein "vertikales Herunterskalieren" des Spannungszustandes in der $\tau-\sigma_\text{n}$ Darstellung, so dass sich derselbe Spannungszustand auf der Bruchebene ergibt. Die Spannungskreise und Bruchhauptspannungen ergeben sich dann aus den jeweiligen Hypothesen zur Lage dieser Bruchebene: Bruch unter Bezugnahme auf reduzierte Scherfestigkeitsparameter oder Bruch auf der durch die ursprünglichen Scherparameter vorgegebenen Bruchebene.</p>
+$$
+    \sigma_3 = \sigma_\text{n}^* - \frac{\tau^*}{F} \tan \left( \frac{\pi}{4} - \frac{\varphi_\text{(red)}}{2} \right)
+$$<p>Im Falle der Beibehaltung einer durch $\varphi$ vorgegebenen Bruchebene ist eine Interpretation mit einer reduzierten Bruchgeraden nicht sinnvoll, wie aus den Darstellungen ersichtlich wird.</p>
 
 </div>
 </div>
@@ -13558,7 +13607,7 @@ $$<p>Die folgende Abbildung gibt einen Eindruck der Unterschiede beider Vorgehen
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> plot_functions/Mohrs_circle_plots.ipynb
-<span class="n">plot_interactive_safety</span><span class="p">()</span>
+<span class="n">plot_interactive_safety_2</span><span class="p">()</span>
 </pre></div>
 
     </div>
