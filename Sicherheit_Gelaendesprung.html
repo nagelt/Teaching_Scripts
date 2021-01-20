@@ -13712,7 +13712,50 @@ $$<p>und rechnen basierend auf diesen Bemessungswerten den Ausnutzungsgrad aus.<
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Die Ergebnisse sind im vorliegenden Falle also vergleichbar.</p>
+<p>Die Ergebnisse sind im vorliegenden Falle also vergleichbar. Die leichte Abweichung ergibt sich durch die veränderte Bruchflächenneigung. Würde man diese auf dem ursprünglichen Wert festhalten, variiert also die Bruchgeometrie nicht, so ergäbe sich das tatsächlich äquivalente Ergebnis:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">theta_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="n">phi</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Der Ausnutzungsgrad unter Verwendung der reduzierten Scherfestigkeitsparameter beträgt </span><span class="si">%.2f</span><span class="s2">.&quot;</span> 
+      <span class="o">%</span><span class="p">(</span><span class="n">mu</span><span class="p">(</span><span class="n">E</span><span class="p">(</span><span class="n">theta_m</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">gamma</span><span class="p">),</span><span class="n">R</span><span class="p">(</span><span class="n">theta_m</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">gamma</span><span class="p">,</span><span class="n">c_m</span><span class="p">,</span><span class="n">phi_m</span><span class="p">))))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Der Ausnutzungsgrad unter Verwendung der reduzierten Scherfestigkeitsparameter beträgt 1.00.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Es sei hier nochmals angemerkt, dass dieses Vorgehen der Illustration dient. Das mit dem Teilsicherheitskonzept aus dem Eurocode in Einklang stehende Vorgehen wird später behandelt.</p>
 
 </div>
 </div>
