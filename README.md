@@ -36,3 +36,7 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 [Earth pressure, Rankine](Rankine.html)
 
 [Geländebruch, Sicherheit](Sicherheit_Gelaendesprung.html)
+
+[Böschungsbruch, lamellenfrei, Isoasphalien (slope failure, slip circle)](slope_stability.html)
+
+[Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](slope_failure.html)
