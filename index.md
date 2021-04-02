@@ -9,17 +9,17 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Specific surface](grain_size_demo.html)
 
-[Kornverteilungskurve](kornverteilungskurve.html)
+[Kornverteilungskurve (grain size distribution)](kornverteilungskurve.html)
 
 [Steifemodul, Oedometer](Steifemodul.html)
 
-[Schnittreaktionen im einachsigen Druckversuch](Schnittreaktionen.html)
+[Schnittreaktionen im einachsigen Druckversuch (reaction forces in uniaxial compression)](Schnittreaktionen.html)
 
-[Hauptspannungen](Hauptspannungen.html)
+[Hauptspannungen (principal stresses)](Hauptspannungen.html)
 
 [Mohr's circle and safety factors](Mohrs_circle.html)
 
-[Triaxialversuch](Triaxialversuch.html)
+[Triaxialversuch (triaxial test)](Triaxialversuch.html)
 
 [Mohr's circle and earth pressures](Mohrs_circle_K0.html)
 
@@ -35,8 +35,10 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Earth pressure, Rankine](Rankine.html)
 
-[Geländebruch, Sicherheit](Sicherheit_Gelaendesprung.html)
+[Geländebruch, Sicherheit (slope failure, limit equilibrium, safety)](Sicherheit_Gelaendesprung.html)
 
 [Böschungsbruch, lamellenfrei, Isoasphalien (slope failure, slip circle)](slope_stability.html)
 
 [Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](slope_failure.html)
+
+[Böschungsbruch, Kinematische Elemente Methode (slope failure, method of kinematic elements)](KEM.html)
