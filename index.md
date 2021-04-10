@@ -42,3 +42,5 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 [Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](slope_failure.html)
 
 [Böschungsbruch, Kinematische Elemente Methode (slope failure, method of kinematic elements)](KEM.html)
+
+[Böschungsbruch, Kinematische Elemente Methode 2 (slope failure, method of kinematic elements 2)](KEM_2.html)
