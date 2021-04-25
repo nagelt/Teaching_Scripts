@@ -46,3 +46,5 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 [Böschungsbruch, Kinematische Elemente Methode 2 (slope failure, method of kinematic elements 2)](KEM_2.html)
 
 [Spannungen unter Zusatzbelastungen (stresses under loads)](stresses_under_loads.html)
+
+[Spannungen unter Flächenlasten -- Steinbrenner (stresses under loads 2)](stresses_steinbrenner.html)
