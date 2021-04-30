@@ -13118,15 +13118,15 @@ Technische Universität Bergakademie Freiberg.</em></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ogs6py.ogs</span> <span class="kn">import</span> <span class="n">OGS</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="kn">from</span> <span class="nn">ogs6py.ogs</span> <span class="kn">import</span> <span class="n">OGS</span>
 <span class="kn">import</span> <span class="nn">vtuIO</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1">#für Farben</span>
-<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.tri</span> <span class="k">as</span> <span class="nn">tri</span>
 
 <span class="kn">import</span> <span class="nn">plot_settings</span>
@@ -13139,7 +13139,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">geo_static</span><span class="o">=</span><span class="n">OGS</span><span class="p">(</span><span class="n">INPUT_FILE</span><span class="o">=</span><span class="s2">&quot;foundation_m_q8_elastic.prj&quot;</span><span class="p">,</span> <span class="n">PROJECT_FILE</span><span class="o">=</span><span class="s2">&quot;geostatic.prj&quot;</span><span class="p">)</span>
@@ -13162,7 +13162,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">geo_static</span><span class="o">.</span><span class="n">replaceParameter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;pressure_top&quot;</span><span class="p">,</span>   <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -13180,7 +13180,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -13205,7 +13205,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soft_load</span><span class="o">.</span><span class="n">replaceParameter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;pressure_top&quot;</span><span class="p">,</span>   <span class="n">value</span><span class="o">=-</span><span class="mf">250.e3</span><span class="p">)</span>
@@ -13223,7 +13223,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13248,7 +13248,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rigid_load</span><span class="o">.</span><span class="n">replaceParameter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;disp_top&quot;</span><span class="p">,</span>   <span class="n">value</span><span class="o">=-</span><span class="mf">0.4175</span><span class="p">)</span>
@@ -13270,7 +13270,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13295,7 +13295,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">PATH_OGS</span><span class="o">=</span><span class="s2">&quot;/home/mok/ogs_release/bin/&quot;</span>
@@ -13317,7 +13317,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>OGS finished with project file geostatic.prj.
-Execution took 4.574522972106934 s
+Execution took 4.678010940551758 s
 </pre>
 </div>
 </div>
@@ -13328,7 +13328,7 @@ Execution took 4.574522972106934 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">soft_load</span><span class="o">.</span><span class="n">runModel</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">PATH_OGS</span><span class="p">)</span>
@@ -13349,7 +13349,7 @@ Execution took 4.574522972106934 s
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>OGS finished with project file soft_load.prj.
-Execution took 5.119764804840088 s
+Execution took 4.504766225814819 s
 </pre>
 </div>
 </div>
@@ -13360,7 +13360,7 @@ Execution took 5.119764804840088 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rigid_load</span><span class="o">.</span><span class="n">runModel</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">PATH_OGS</span><span class="p">)</span>
@@ -13381,7 +13381,7 @@ Execution took 5.119764804840088 s
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>OGS finished with project file rigid_load.prj.
-Execution took 6.175956964492798 s
+Execution took 4.376091957092285 s
 </pre>
 </div>
 </div>
@@ -13400,7 +13400,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pvd_geo</span> <span class="o">=</span> <span class="n">vtuIO</span><span class="o">.</span><span class="n">PVDIO</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="s2">&quot;geo_static_output.pvd&quot;</span><span class="p">,</span><span class="n">interpolation_method</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -13435,7 +13435,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">line_0</span><span class="o">=</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="mf">20.0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)]</span>
@@ -13466,10 +13466,11 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;Paired&quot;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_palette</span><span class="p">(</span><span class="s2">&quot;Paired&quot;</span><span class="p">,</span><span class="n">n_colors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
@@ -13526,7 +13527,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">disp_rigid</span> <span class="o">=</span> <span class="n">pvd_rigid</span><span class="o">.</span><span class="n">readPointSetData</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;displacement&#39;</span><span class="p">,</span> <span class="n">pointsetarray</span><span class="o">=</span><span class="n">line_0</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
@@ -13541,7 +13542,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_K</span> <span class="o">=</span> <span class="mi">20</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="mf">0.37</span>
@@ -13557,10 +13558,11 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="n">disp_rigid</span><span class="o">-</span><span class="n">disp_geo</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;rigid&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="n">disp_soft</span><span class="o">-</span><span class="n">disp_geo</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;soft&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_K</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="n">u_K_rigid</span><span class="o">-</span><span class="n">u_K_geo</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
@@ -13600,7 +13602,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Setzungsdifferenz im kennzeichnenden Punkt ist </span><span class="si">%.2f</span><span class="s2"> cm.&quot;</span> 
@@ -13640,7 +13642,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">m_soft</span><span class="o">=</span><span class="n">vtuIO</span><span class="o">.</span><span class="n">VTUIO</span><span class="p">(</span><span class="s2">&quot;soft_load_output_ts_1_t_1.000000.vtu&quot;</span><span class="p">,</span><span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -13655,7 +13657,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">triang</span><span class="o">=</span><span class="n">tri</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">m_geo</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="n">m_geo</span><span class="o">.</span><span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
@@ -13668,7 +13670,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">u_z_geo</span> <span class="o">=</span> <span class="n">m_geo</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="s2">&quot;displacement&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
@@ -13683,10 +13685,11 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">contour_soft</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tricontourf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="n">u_z_soft</span><span class="o">-</span><span class="n">u_z_geo</span><span class="p">)</span>
 <span class="n">contour_rigid</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tricontourf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="n">u_z_rigid</span><span class="o">-</span><span class="n">u_z_geo</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">contour_soft</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$u_z$ / cm&#39;</span><span class="p">)</span>
@@ -13737,7 +13740,7 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sig_zz_soft</span> <span class="o">=</span> <span class="n">m_soft</span><span class="o">.</span><span class="n">getField</span><span class="p">(</span><span class="s2">&quot;sigma&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span>
@@ -13751,10 +13754,11 @@ Execution took 6.175956964492798 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">contour_soft</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tricontourf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="o">-</span><span class="n">sig_zz_soft</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">350</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
 <span class="n">contour_rigid</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tricontourf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="o">-</span><span class="n">sig_zz_rigid</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">350</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">450</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">contour_soft</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">sigma_</span><span class="si">{zz}</span><span class="s1">$ / kPa&#39;</span><span class="p">)</span>
@@ -13791,19 +13795,6 @@ Execution took 6.175956964492798 s
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
