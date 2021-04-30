@@ -48,3 +48,5 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 [Spannungen unter Zusatzbelastungen (stresses under loads)](stresses_under_loads.html)
 
 [Spannungen unter Flächenlasten -- Steinbrenner (stresses under loads 2)](stresses_steinbrenner.html)
+
+[Spannungen unter Streifenlasten -- starr und biegeschlaff (stresses under strip foundations)](Foundations_OGS.html)
