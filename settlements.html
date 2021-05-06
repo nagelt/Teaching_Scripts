@@ -13169,7 +13169,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Wiederholung:-Lineare-Elastizit&#228;t-in-3D">Wiederholung: Lineare Elastizit&#228;t in 3D<a class="anchor-link" href="#Wiederholung:-Lineare-Elastizit&#228;t-in-3D">&#182;</a></h2><p>Die Effektivspannungsänderungen, die durch den Lasteintrag hervorgerufen werden, gehen mit Verformungen einher. Die Verbindung von Spannungs- und Verzerrungsänderungen erfolgt über konstitutive Modelle, also Material- oder Stoffmodelle.</p>
 <p>Der linear elastische Festkörper wird im dreidimensionalen Raum beschrieben durch das generalisierte Hooke'sche Gesetz:</p>
-\begin{align*}
+\begin{align}
 \left(
     \begin{array}{c}
     \epsilon_{xx}
@@ -13217,8 +13217,8 @@ Technische Universität Bergakademie Freiberg.</em></p>
     \Delta \sigma_{xz}'
     \end{array}
 \right)
-\end{align*}<p>bzw. nach den Spannungen aufgelöst
-\begin{align*}
+\end{align}<p>bzw. nach den Spannungen aufgelöst</p>
+\begin{align}
 \left(
     \begin{array}{c}
     \Delta \sigma_{xx}'
@@ -13232,8 +13232,10 @@ Technische Universität Bergakademie Freiberg.</em></p>
     \Delta \sigma_{yz}'
     \\
     \Delta \sigma_{xz}'
-    \end{array}</p>
-<h1 id="\right)">\right)<a class="anchor-link" href="#\right)">&#182;</a></h1><p>\frac{E}{(1+\nu) (1-2\nu)}
+    \end{array}
+\right)
+=
+\frac{E}{(1+\nu) (1-2\nu)}
 \left(
     \begin{array}{cccccc}
     1 -\nu &amp; \nu &amp; \nu &amp; 0 &amp; 0 &amp; 0
@@ -13264,8 +13266,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
     \epsilon_{xz}
     \end{array}
 \right)
-\end{align*}</p>
-<p>Für die Verzerrungen wurde dabei auf die Ausweisung der Inkremente $\Delta$ verzichtet, da implizit angenommen wird, dass der Primärspannungszustand als unvervormter Ausgangszustand betrachtet wird.</p>
+\end{align}<p>Für die Verzerrungen wurde dabei auf die Ausweisung der Inkremente $\Delta$ verzichtet, da implizit angenommen wird, dass der Primärspannungszustand als unvervormter Ausgangszustand betrachtet wird.</p>
 
 </div>
 </div>
