@@ -13635,12 +13635,13 @@ $$
     s = \int \limits_{z=0}^{z=t} \epsilon_{zz} \text{d}z
 $$<p>aus, also bis in eine endliche Tiefe $t$ durch, so entspricht das einer in der Tiefe $t$ anstehenden undeformierbaren Baugrundschicht. Die Eckpunktsetzung ergibt sich zu</p>
 $$
-    s = \frac{q (1-\nu)^2}{\pi E} \left[
+    s = \frac{q_0 (1-\nu)^2}{\pi E} \left[
         a \ln \frac{\left( b + \sqrt{a^2 + b^2} \right) \sqrt{a^2 + t^2}}{a(b+R)} + 
         b \ln \frac{\left( a + \sqrt{a^2 + b^2} \right) \sqrt{b^2 + t^2}}{b(a+R)}
     \right] + 
     \frac{q (1-\nu-2\nu^2)}{2 \pi E} t \arctan \left( \frac{ab}{tR} \right)
-$$<p>Den Einfluss der Integrationsgrenztiefe $t$ demonstriert die folgende Abbildung.</p>
+$$<p>mit $R = \sqrt{a^2 + b^2 + t^2}$.</p>
+<p>Den Einfluss der Integrationsgrenztiefe $t$ demonstriert die folgende Abbildung.</p>
 
 </div>
 </div>
@@ -13688,6 +13689,310 @@ $$<p>Den Einfluss der Integrationsgrenztiefe $t$ demonstriert die folgende Abbil
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Oberflächennah anstehende sehr steife Baugrundschichten verringern die auftretenden Setzungen also sehr stark. Aufgrund der Spannungsausbreitung im Untergrund tragen tiefere Schichten immer weniger zum Setzungsbetrag bei. Es lässt sich also die Existenz einer Grenztiefe für die Setzungsberechnung erwarten. Dazu das nächste Mal mehr.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Mittelpunktsetzungen-unter-konstanten-Rechteck-bzw.-Kreislasten">Mittelpunktsetzungen unter konstanten Rechteck bzw. Kreislasten<a class="anchor-link" href="#Mittelpunktsetzungen-unter-konstanten-Rechteck-bzw.-Kreislasten">&#182;</a></h2><p>Für Mittelpunktsetzungen unter schlaffen Lasten $q_0$ auf kreisförmigen Flächen des Radius $R$ gilt nach <em>Fischer</em></p>
+$$
+    s_{\text{M; Kreis}}(R) = \frac{2q_0}{E} \left[ (1-\nu^2) \left( R + t - \sqrt{t^2 + R^2} \right) - \frac{t(1+\nu)}{2} \left( 1 - \frac{t}{\sqrt{t^2 + R^2}} \right) \right]
+$$<p>Die Mittelpunktsetzung der Rechtecklast berechnen wir aus der bereits bekannten Eckpunktformel durch Superposition:</p>
+$$
+    s_{\text{M; Rechteck}}(a \times b) = 4 s_{\text{E; Rechteck}}\left( \frac{a}{2} \times \frac{b}{2} \right)
+$$<p>In der folgenden Abbildung werden die Setzungen unter Rechtecklasten (Eck- und Mittelpunkte) mit denen unter flächengleichen Kreislasten verglichen.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
+<span class="n">interactive_rect_circ_settlement</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Zur-Grenztiefe">Zur Grenztiefe<a class="anchor-link" href="#Zur-Grenztiefe">&#182;</a></h2><p>Wir nähern uns nun der Fragestellung einer Grenztiefe für die Setzungsermittlung und nutzen dafür die bekannten Formeln für die Eckpunkte von Rechtecklasten. Wir betrachten einerseits das Verhältnis des berechneten Setzungswertes bei Ansatz einer bestimmten Grenztiefe $t$ und des Grenzwertes bei unendlicher Grenztiefe:</p>
+$$
+    \frac{s(t)}{\lim \limits_{t \rightarrow \infty} s(t)}
+$$<p>Dieses Verhältnis vergleichen wir mit dem Verhältnis der auflastinduzierten Spannungsänderung $\Delta \sigma_{zz}$ zum Betrag der Vertikalspannung im Grundspannungszustand $\sigma_{0,zz}$ in:</p>
+$$
+    \frac{\Delta \sigma_{zz}(t)}{\sigma_{0,zz}(t)} \quad \text{mit} \quad \sigma_{0,zz}(z) = \gamma t
+$$
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
+<span class="n">interactive_grenztiefe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Der reale Baugrund ist kein unendlicher Halbraum mit konstanten Eigenschaften. Die Steifigkeit des Bodens nimmt i.d.R. mit zunehmender Tiefe stark zu (es können aber auch stark kompressible und damit setzungsgebende Schichten anstehen). Zudem sind die Steifigkeiten bei sehr kleinen Verformungen deutlich höher als die Werte, die aus den typischen Kompressionsversuchen (Ödometer, Triax) bei den dort üblichen Deformationen ermittelt werden. Die mit der obigen Formel ermittelten Setzungsbeträge sind daher in der Regel unrealistisch. Die Schichtung des Baugrundes mit ihren variablen Eigenschaften ist daher in den Berechnungen zu berücksichtigen.</p>
+<p>Wenn keine stark zusammendrückbaren Schichten ein anderes Vorgehen nahelegen, wird die Grenztiefe der Setzungsberechnung als die Dicke des die tatsächlich auftretenden Setzungen bestimmenden Bereichs durch das Kriterium $\Delta \sigma_{zz}(t_\text{s}) = 0.2 \sigma_{0,zz}$ festgelegt.</p>
+<p>Details zur Festlegung der Grenztiefe siehe Vorlesungsunterlagen und DIN 4019.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Formulierung-in-Beiwerten">Formulierung in Beiwerten<a class="anchor-link" href="#Formulierung-in-Beiwerten">&#182;</a></h2><p>Man kann die bisherige Beziehung</p>
+$$
+    s = \frac{q_0 (1-\nu)^2}{\pi E} \left[
+        a \ln \frac{\left( b + \sqrt{a^2 + b^2} \right) \sqrt{a^2 + t^2}}{a(b+R)} + 
+        b \ln \frac{\left( a + \sqrt{a^2 + b^2} \right) \sqrt{b^2 + t^2}}{b(a+R)}
+    \right] + 
+    \frac{q_0 (1-\nu-2\nu^2)}{2 \pi E} t \arctan \left( \frac{ab}{tR} \right)
+$$<p>auch mit Hilfe des dimensionslosen Beiwertes $f_\text{R}$ formulieren:</p>
+\begin{align*}
+    s &amp;= \frac{q_0 b f_\text{R}}{E}
+    &amp;\text{mit } f_\text{R} = \frac{(1-\nu)^2}{b \pi} \left[
+        a \ln \frac{\left( b + \sqrt{a^2 + b^2} \right) \sqrt{a^2 + z^2}}{a(b+R)} + 
+        b \ln \frac{\left( a + \sqrt{a^2 + b^2} \right) \sqrt{b^2 + z^2}}{b(a+R)}
+    \right] + 
+    \frac{(1-\nu-2\nu^2)}{2 b \pi} t \arctan \left( \frac{ab}{zR} \right)
+\end{align*}<p>wobei die Dicke der zusammendrückbaren Schicht hier mit $z$ bezeichnet wurde.</p>
+<p>Für die baupraktische Berechnung wird nun ein Rechenmodul $E^*$ eingeführt, der die Zusammendrückbarkeit des Materials charakterisiert. Für homogene Verhältnisse kann $E^* = E/(1-\nu^2)$ abgeleitet werden. Allerdings hat diese Beziehung praktisch kaum Bedeutung und $E^*$ wird aus anderen Überlegungen ermittelt. Setzt man in die obigen Beziehungen $\nu \leftarrow 0$ und $E \leftarrow E^*$, so gelangt man zu folgender Formulierung mit der beiwertbasierten Beziehung, die innerhalb der Lastfläche mit ausreichender Genauigkeit Verwendung findet:</p>
+\begin{align*}
+    s &amp;= \frac{q_0 b f_\text{R}}{E^*}
+    \\
+    &amp;\text{mit } f_\text{R} = \frac{1}{b \pi} \left[
+        a \ln \frac{\left( b + \sqrt{a^2 + b^2} \right) \sqrt{a^2 + z^2}}{a(b+R)} + 
+        b \ln \frac{\left( a + \sqrt{a^2 + b^2} \right) \sqrt{b^2 + z^2}}{b(a+R)}
+    \right] + 
+    \frac{1}{2 b \pi} t \arctan \left( \frac{ab}{zR} \right)
+    \\
+    &amp;\text{und }  R = \sqrt{a^2 + b^2 + z^2}
+\end{align*}<p>Zur einfacheren Handhabung werden Bemessungsdiagramme eingeführt:</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
+<span class="n">interactive_fR_rechteck</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zum Vergleich werden die Kurven für $\nu \neq 0$ geplottet, die bei Punkten außerhalb der Lastfläche Anwendung finden. Es sei darauf hingewiesen, dass die Verwendung mit $s = q_0 b f_\text{R}/E^*$ nur für $E^* \leftarrow E$ der mechanisch korrekten Lösung entspricht.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
+<span class="n">interactive_fR_rechteck_nu</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Durch Anwendung der Formel für $\nu=0$ können Setzungen an beliebigen Punkten im Inneren der Lastfläche ermittelt werden. Von besonderem Interesse ist der sog. kennzeichnende Punkt, an dem die Setzungen einer Setzungsmulde unter einer schlaffen Last gleich denen unter einer starren Last mit gleicher Resultierender sind. Definiert man auch hier</p>
+$$
+    s_\text{K} = \frac{q_0bf_\text{K}}{E^*}
+$$<p>so gilt demzufolge</p>
+$$
+    f_\text{K} = \sum \limits_{i=0}^3 f_\text{R}(a_i, b_i) \frac{b_i}{b}
+$$<p>mit den Koordinaten des kennzeichnenden Punktes (Eckpunkte der vier superponierten Rechtecke)</p>
+\begin{align}
+    x_i &amp;= \{0.87a,\ 0.87a,\ 0.87b,\ 0.13a\} \quad \text{für } i \in [0,3]
+    \\
+    y_i &amp;= \{0.87b,\ 0.13b,\ 0.13a,\ 0.13b\} \quad \text{für } i \in [0,3]
+\end{align}
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
+<span class="n">interactive_fK_rechteck_nu</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Anwendung-auf-geschichteten-Baugrund">Anwendung auf geschichteten Baugrund<a class="anchor-link" href="#Anwendung-auf-geschichteten-Baugrund">&#182;</a></h2><p>Für die Erweiterung auf geschichteten Baugrund werden die Setzungsbeträge schichtweise berechnet und aufaddiert. Die nachfolgende Skizze veranschaulicht das Prinzip:</p>
+<p><img src="https://github.com/nagelt/Teaching_Scripts/raw/master/Images/settlement_layers.png" style="width: 1200px;"/></p>
+<p>Zur Anwendung kommt folgende Formel:</p>
+$$
+    s = q_0 b \left( \frac{f_1}{E_1^*} + \sum \limits_{i=2}^n \frac{f_i - f_{i-1}}{E_i^*} \right)
+$$<p>Der laufende Index $i$ kennzeichnet die Schichtnummer ($i=1$: oberste Schicht), $f_i$ bezeichnet den Setzungsbeiwert der $i$-ten Schicht bezogen auf ihre Unterkante und $E_i^*$ ist der mittlere Zusammendrückungsmodul (Rechenmodul) der $i$-ten Schicht.</p>
 
 </div>
 </div>
