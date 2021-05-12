@@ -13993,10 +13993,138 @@ $$<p>mit den Koordinaten des kennzeichnenden Punktes (Eckpunkte der vier superpo
 $$
     s = q_0 b \left( \frac{f_1}{E_1^*} + \sum \limits_{i=2}^n \frac{f_i - f_{i-1}}{E_i^*} \right)
 $$<p>Der laufende Index $i$ kennzeichnet die Schichtnummer ($i=1$: oberste Schicht), $f_i$ bezeichnet den Setzungsbeiwert der $i$-ten Schicht bezogen auf ihre Unterkante und $E_i^*$ ist der mittlere Zusammendrückungsmodul (Rechenmodul) der $i$-ten Schicht.</p>
+<p>Die folgenden Skripte können zur Übung von Beispielen genutzt werden:</p>
+<ol>
+<li>Anzahl der Bodenschichten bestimmen.</li>
+<li>'update_layers' anklicken und die Sohlnormalspannung $q_0$, die Tiefe $d$ und mittlere Wichte $\gamma_d$ des Aushubs, die Querkontraktionszahl $\nu$, sowie die Fundamentabmessungen eingeben.</li>
+<li>Die Tiefen der Schichtunterkanten gemessen ab Baugrundsohle ($z_i$), die Rechenmodule der Schichten $E_i^*$ und deren Wichten $\gamma_i$ (unter Auftrieb oder total) angeben.</li>
+<li>'update_analysis' anklicken und Ergebnis auswerten.</li>
+</ol>
 
 </div>
 </div>
 </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#global variables</span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n_layers</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;$n_</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{layers}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">n_layers</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">run_layers</span><span class="p">,</span> <span class="n">update_layers</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="o">%</span><span class="k">run</span> plot_functions/settlements_plots.ipynb
+<span class="n">interact</span><span class="p">(</span><span class="n">run_analysis</span><span class="p">,</span> <span class="n">update_analysis</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
 
 
 
