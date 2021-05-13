@@ -54,3 +54,5 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 [Spannungen unter Streifenlasten -- starr und biegeschlaff (stresses under strip foundations)](Foundations_OGS.html)
 
 [Setzungen -- Einführung in direkte Methoden (settlements, introduction to direct methods)](settlements.html)
+
+[Setzungen -- Einführung in indirekte Methoden (settlements, introduction to indirect methods)](settlements_indirect.html)
