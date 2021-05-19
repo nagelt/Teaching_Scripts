@@ -13161,6 +13161,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <span class="c1">#Some plot settings</span>
 <span class="kn">import</span> <span class="nn">plot_functions.plot_settings</span>
 <span class="o">%</span><span class="k">run</span> plot_functions/settlements_plots.ipynb
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.spines.top&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 
     </div>
@@ -14155,6 +14156,68 @@ $$<p>Der laufende Index $i$ kennzeichnet die Schichtnummer ($i=1$: oberste Schic
 
 </div>
 
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Spannungs&#228;nderung-durch-GW-Absenkung-oder-Anstieg">Spannungs&#228;nderung durch GW Absenkung oder Anstieg<a class="anchor-link" href="#Spannungs&#228;nderung-durch-GW-Absenkung-oder-Anstieg">&#182;</a></h2><p>Die folgende Abbildung verdeutlicht die Veränderung neutraler, effektiver und totaler Spannungen infolge variabler Grundwasserstände für ausgewählte Wichten und einen mit der Tiefe zunehmenden Steifemodul nach Ohde. Die Zahlenwerte sind als exemplarisch zu erachten. Man beachte die Relevanz der tiefenabhängigen Steifigkeit und des Konzeptes der Grenztiefe, um bei großräumigen Spannungsänderungen wie in diesem Fall zu sinnvollen Ergebnissen zu gelangen. Man beachte auch, dass bei Grundwasserspiegeländerungen Sackungen und ähnliche Phänomene auftreten können, die zu Deformationen führen, die mit dem unten verwendeten einfachen Modell nicht erklärbar sind und qualitativ falsch abgeschätzt werden könnten.</p>
+
+</div>
+</div>
+</div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">interact</span><span class="p">(</span><span class="n">stress_depth</span><span class="p">,</span> <span class="n">dzw</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">Delta z_</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{GW}</span><span class="s1">$ / m&#39;</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
 </div>
 </div>
 
