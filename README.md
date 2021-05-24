@@ -49,7 +49,7 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Spannungen unter Flächenlasten -- Steinbrenner (stresses under loads 2)](stresses_steinbrenner.html)
 
-[Kernweiten unter Rechtecklasten (core ranges under rectangular foundations)](sohldruck.html)
+[Sohlspannungen, Kernweiten, Spannungstrapeze, Bettungsmodulverfahren, Steifemodulverfahern (footing pressures, core ranges, elastic bedding and constrained modulus method for beams and plates)](sohldruck.html)
 
 [Spannungen unter Streifenlasten -- starr und biegeschlaff (stresses under strip foundations)](Foundations_OGS.html)
 
