@@ -13171,6 +13171,7 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reibungsfreier,-koh&#228;siver-Boden">Reibungsfreier, koh&#228;siver Boden<a class="anchor-link" href="#Reibungsfreier,-koh&#228;siver-Boden">&#182;</a></h2><p>Zunächst betrachten wir den Grenzzustand infolge einer Flächenlast $p$, die hier als streifenförmig betrachtet werden und auf der Breite $b$ wirken soll. Im Sinne der kinematischen Methoden wählen wir plausible Bruchmechanismen und stellen für diese die Gleichgewichtsbedingungen im Grenzzustand auf und erhalten eine obere Schranke, deren Minimum wir suchen. Im Sinne der statischen Methoden definieren wir ein statisch zulässiges Spannungsfeld im Grenzzustand und erhalten eine untere Schranke, deren Maximum wir suchen.</p>
+<p>Die Art des sich einstellenden Bruchs hängt auch von den Fundamentfreiheitsgraden ab; also bspw. davon, ob das Fundament frei rotieren kann oder eben nicht -- etwa, wenn es Zwängungen eines steifen Tragwerks unterliegt. Eine weitere Möglichkeit sind schlaffe Lasten, die den Bodenbewegungen frei folgen können.</p>
 <h3 id="Statische-Variante-1:">Statische Variante 1:<a class="anchor-link" href="#Statische-Variante-1:">&#182;</a></h3><p>Wir teilen den Untergrund wie folgt in die Bereiche 1 und 2. Unterhalb der Last sei die Vertikalspannung $\sigma_{zz}^1 = \gamma z + p$, außerhalb des belasteten Bereichs $\sigma_{zz}^2 = \gamma z$. Beide Bereiche seien schubfrei miteinander über vertikale Fugen verbunden. Die Horizontalnormalspannungen müssen über diese Fugen hinweg jedoch stetig sein: $\sigma_{xx}^1 = \sigma_{xx}^2$. Der Boden in Bereich 1 befindet sich somit im aktiven, der Boden im Bereich 2 im passiven Grenzzustand (Zonenbruch).</p>
 <p>Wegen</p>
 $$
@@ -13592,7 +13593,7 @@ $$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
-<span class="c1">#%run plot_functions/KEM_plots.ipynb</span>
+<span class="o">%</span><span class="k">run</span> plot_functions/KEM_plots.ipynb
 <span class="c1">#t1,t2,b,p,c,plot</span>
 <span class="n">additional</span> <span class="o">=</span> <span class="p">(</span><span class="mi">45</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">get_pB_GB</span><span class="p">([</span><span class="mf">1.0</span><span class="p">],</span><span class="o">*</span><span class="n">additional</span><span class="p">);</span>
@@ -13611,7 +13612,11 @@ $$
     
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Bei einem Ausnutzungsgrad von 1.00 ergibt sich die Bruchlast zu 5.45 c
+<pre>N12 2.908, N21 2.908
+N23 1.030, N32 1.030
+N3 0.921
+Ep 0.613  0.613 
+Bei einem Ausnutzungsgrad von 1.00 ergibt sich die Bruchlast zu 5.45 c
 </pre>
 </div>
 </div>
