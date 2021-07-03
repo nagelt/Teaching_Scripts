@@ -57,4 +57,6 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Setzungen -- Einführung in indirekte Methoden (settlements, introduction to indirect methods)](settlements_indirect.html)
 
-[Grundbruch -- Vorüberlegungen](Grundbruch.html)
+[Grundbruch -- Vorüberlegungen (foundation failure, basics)](Grundbruch.html)
+
+[Einblicke in Materialmodelle (insights into material modelling)](stress_paths.html)
