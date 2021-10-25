@@ -13372,7 +13372,7 @@ $$<p>abgeleitet werden.</p>
 
 <span class="n">Massen</span> <span class="o">=</span> <span class="p">[</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">Startwerte</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">description</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">Siebdurchmesser</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; mm&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Siebdurchmesser</span><span class="p">))]</span>
 <span class="n">Eingabe</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">(</span><span class="n">Massen</span><span class="p">)</span>
-<span class="n">Eingabe</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Eingabe</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13411,13 +13411,7 @@ $$<p>abgeleitet werden.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
-<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">Neuauswertung</span><span class="p">):</span>
-    <span class="n">m_i</span> <span class="o">=</span> <span class="n">Siebmassen</span><span class="p">(</span><span class="n">Eingabe</span><span class="p">)</span>
-    <span class="n">dm_i</span> <span class="o">=</span> <span class="n">Masseanteile</span><span class="p">(</span><span class="n">m_i</span><span class="p">)</span>
-    <span class="n">sum_dm_i</span> <span class="o">=</span> <span class="n">Siebdurchgang</span><span class="p">(</span><span class="n">dm_i</span><span class="p">)</span>
-    <span class="n">plot_KVK</span><span class="p">(</span><span class="n">sum_dm_i</span><span class="p">)</span>
-
-<span class="n">interact</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">Neuauswertung</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_KVK_glob</span><span class="p">,</span> <span class="n">Neuauswertung</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -13506,13 +13500,7 @@ $$<p>abgeleitet werden.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
-<span class="k">def</span> <span class="nf">plot2</span><span class="p">(</span><span class="n">Neuauswertung</span><span class="p">):</span>
-    <span class="n">m_i</span> <span class="o">=</span> <span class="n">Siebmassen</span><span class="p">(</span><span class="n">Eingabe</span><span class="p">)</span>
-    <span class="n">dm_i</span> <span class="o">=</span> <span class="n">Masseanteile</span><span class="p">(</span><span class="n">m_i</span><span class="p">)</span>
-    <span class="n">sum_dm_i</span> <span class="o">=</span> <span class="n">Siebdurchgang</span><span class="p">(</span><span class="n">dm_i</span><span class="p">)</span>
-    <span class="n">plot_Rohdaten</span><span class="p">(</span><span class="n">dm_i</span><span class="p">,</span><span class="n">sum_dm_i</span><span class="p">)</span>
-
-<span class="n">interact</span><span class="p">(</span><span class="n">plot2</span><span class="p">,</span> <span class="n">Neuauswertung</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">plot_Rohdaten_glob</span><span class="p">,</span> <span class="n">Neuauswertung</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 
     </div>
