@@ -13436,7 +13436,7 @@ $\displaystyle \frac{H \left(\tan{\left(\alpha \right)} \tan{\left(\beta \right)
     <span class="n">term1</span> <span class="o">=</span> <span class="p">(</span><span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">term2</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">term3</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">term1</span> <span class="o">-</span> <span class="n">term2</span> <span class="o">+</span> <span class="n">term3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">term1</span> <span class="o">-</span> <span class="n">term2</span> <span class="o">+</span> <span class="n">term3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 </pre></div>
 
     </div>
@@ -13482,7 +13482,7 @@ $\displaystyle \frac{H \left(\tan{\left(\alpha \right)} \tan{\left(\beta \right)
 
 
 <div class="output_latex output_subarea output_execute_result">
-$\displaystyle \frac{H^{2} \left(\sin{\left(\vartheta \right)} \tan{\left(\alpha \right)} + \cos{\left(\vartheta \right)}\right) \left(\tan{\left(\alpha \right)} \tan{\left(\beta \right)} + 1\right)}{\sin{\left(\vartheta \right)} - \cos{\left(\vartheta \right)} \tan{\left(\beta \right)}}$
+$\displaystyle \frac{H^{2} \left(\sin{\left(\vartheta \right)} \tan{\left(\alpha \right)} + \cos{\left(\vartheta \right)}\right) \left(\tan{\left(\alpha \right)} \tan{\left(\beta \right)} + 1\right)}{2 \left(\sin{\left(\vartheta \right)} - \cos{\left(\vartheta \right)} \tan{\left(\beta \right)}\right)}$
 </div>
 
 </div>
@@ -13495,7 +13495,7 @@ $\displaystyle \frac{H^{2} \left(\sin{\left(\vartheta \right)} \tan{\left(\alpha
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Thus, the area of our triangle is given as:</p>
 $$
-    A = \frac{H^2 (\sin \vartheta \tan \alpha + \cos \vartheta) (\tan \alpha \tan \beta + 1)}{\sin \vartheta - \cos \vartheta \tan \beta}
+    A = \frac{H^2 (\sin \vartheta \tan \alpha + \cos \vartheta) (\tan \alpha \tan \beta + 1)}{2(\sin \vartheta - \cos \vartheta \tan \beta)}
 $$<p>Now we can write the force balance. For that purpose, we introduce the material's specific weight $\gamma$, friction angle $\varphi$ and the wall friction angle $\delta_\text{a}$ as well as the cohesion $c$.</p>
 
 </div>
@@ -13730,7 +13730,7 @@ $\displaystyle \left\{ E_{a} : \frac{C \sin{\left(\vartheta \right)} \sin{\left(
 
 
 <div class="output_latex output_subarea output_execute_result">
-$\displaystyle - \frac{H^{2} \gamma \left(\sin{\left(\vartheta \right)} \tan{\left(\alpha \right)} + \cos{\left(\vartheta \right)}\right) \left(\tan{\left(\alpha \right)} \tan{\left(\beta \right)} + 1\right) \sin{\left(\varphi - \vartheta \right)}}{\left(\sin{\left(\vartheta \right)} - \cos{\left(\vartheta \right)} \tan{\left(\beta \right)}\right) \cos{\left(\alpha + \delta_{a} + \varphi - \vartheta \right)}}$
+$\displaystyle - \frac{H^{2} \gamma \left(\sin{\left(\vartheta \right)} \tan{\left(\alpha \right)} + \cos{\left(\vartheta \right)}\right) \left(\tan{\left(\alpha \right)} \tan{\left(\beta \right)} + 1\right) \sin{\left(\varphi - \vartheta \right)}}{2 \left(\sin{\left(\vartheta \right)} - \cos{\left(\vartheta \right)} \tan{\left(\beta \right)}\right) \cos{\left(\alpha + \delta_{a} + \varphi - \vartheta \right)}}$
 </div>
 
 </div>
