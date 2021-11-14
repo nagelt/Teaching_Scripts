@@ -35,6 +35,8 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Earth pressure, Rankine](Rankine.html)
 
+[Sicherheits- und Zuverlässigkeitskonzepte (safety and reliability concepts)](Sicherheitskonzepte.html)
+
 [Geländebruch, Sicherheit (slope failure, limit equilibrium, safety)](Sicherheit_Gelaendesprung.html)
 
 [Böschungsbruch, lamellenfrei, Isoasphalien (slope failure, slip circle)](slope_stability.html)
