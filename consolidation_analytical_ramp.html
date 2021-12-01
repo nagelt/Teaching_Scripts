@@ -13328,16 +13328,16 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <h1 id="Konsolidationstheorie---Beispiele">Konsolidationstheorie - Beispiele<a class="anchor-link" href="#Konsolidationstheorie---Beispiele">&#182;</a></h1><h2 id="Linear-aufgebrachte-und-anschlie&#223;end-konstante-Fl&#228;chenlast-mit-unendlicher-Ausdehnung">Linear aufgebrachte und anschlie&#223;end konstante Fl&#228;chenlast mit unendlicher Ausdehnung<a class="anchor-link" href="#Linear-aufgebrachte-und-anschlie&#223;end-konstante-Fl&#228;chenlast-mit-unendlicher-Ausdehnung">&#182;</a></h2><p>Die Flächenlast $q_0$ wird wie folgt aufgebracht:</p>
 \begin{align*}
     q = \begin{cases}
-        q_0 \frac{T}{T_\text{B}} &amp; T \leq T_\text{B}
+        q_0 \frac{T}{T_\text{B}} &amp; T_\text{V} \leq T_\text{B}
         \\
-        q_0 &amp; T &gt; T_\text{B}
+        q_0 &amp; T_\text{V} &gt; T_\text{B}
     \end{cases}
 \end{align*}<p>Der Strömungsdruck (Porenwasserüberdruck) stellt sich wie folgt ein</p>
 \begin{align*}
     \Delta u = \begin{cases}
-         \frac{q_0}{T_\text{B}} \frac{16}{\pi^3} \sum \limits_{i=0}^\infty \left[ \frac{(-1)^i}{(2i+1)^3} \cos \left[ (2i+1) \frac{\pi}{2} \frac{z}{H} \right] \left( 1 - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T \leq T_\text{B}
+         \frac{q_0}{T_\text{B}} \frac{16}{\pi^3} \sum \limits_{i=0}^\infty \left[ \frac{(-1)^i}{(2i+1)^3} \cos \left[ (2i+1) \frac{\pi}{2} \frac{z}{H} \right] \left( 1 - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T_\text{V} \leq T_\text{B}
         \\
-        \frac{q_0}{T_\text{B}} \frac{16}{\pi^3} \sum \limits_{i=0}^\infty \left[ \frac{(-1)^i}{(2i+1)^3} \cos \left[ (2i+1) \frac{\pi}{2} \frac{z}{H} \right] \left( \exp \left( -(2i+1)^2 \frac{\pi^2}{4} (T_\text{V} - T_\text{B}) \right) - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T &gt; T_\text{B}
+        \frac{q_0}{T_\text{B}} \frac{16}{\pi^3} \sum \limits_{i=0}^\infty \left[ \frac{(-1)^i}{(2i+1)^3} \cos \left[ (2i+1) \frac{\pi}{2} \frac{z}{H} \right] \left( \exp \left( -(2i+1)^2 \frac{\pi^2}{4} (T_\text{V} - T_\text{B}) \right) - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T_\text{V} &gt; T_\text{B}
     \end{cases}
 \end{align*}<p>Bei einseitiger Entwässerung ergibt sich folgendes Bild:</p>
 
@@ -13387,10 +13387,10 @@ Technische Universität Bergakademie Freiberg.</em></p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Der Verdichtungsgrad ergibt sich aus</p>
 \begin{align*}
-    U_\text{V} = \begin{cases}
-         \frac{T}{T_\text{B}} - \frac{32}{T_\text{B} \pi^4} \sum \limits_{i=0}^\infty \left[ \frac{1}{(2i+1)^4} \left( 1 - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T \leq T_\text{B}
+    U = \begin{cases}
+         \frac{T}{T_\text{B}} - \frac{32}{T_\text{B} \pi^4} \sum \limits_{i=0}^\infty \left[ \frac{1}{(2i+1)^4} \left( 1 - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T_\text{V} \leq T_\text{B}
         \\
-        1 - \frac{32}{T_\text{B} \pi^4} \sum \limits_{i=0}^\infty \left[ \frac{1}{(2i+1)^4} \left( \exp \left( -(2i+1)^2 \frac{\pi^2}{4} [T_\text{V} - T_\text{B}]\right) - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T &gt; T_\text{B}
+        1 - \frac{32}{T_\text{B} \pi^4} \sum \limits_{i=0}^\infty \left[ \frac{1}{(2i+1)^4} \left( \exp \left( -(2i+1)^2 \frac{\pi^2}{4} [T_\text{V} - T_\text{B}]\right) - \exp \left( -(2i+1)^2 \frac{\pi^2}{4} T_\text{V}\right) \right)\right] &amp; T_\text{V} &gt; T_\text{B}
     \end{cases}
 \end{align*}<p>Je langsamer die Last aufgebracht wird, umso länger dauert der Gesamtkonsolidationsvorgang. Allerdings findet ein zunehmend signifikanter werdender Anteil der Verdichtung bereits während der Laststeigerungsphase statt.</p>
 
