@@ -33,6 +33,8 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 [Active earth pressure, Coulomb](active_earth_pressure.html)
 
+[Passive earth pressure, Coulomb](passive_earth_pressure.html)
+
 [Earth pressure, Rankine](Rankine.html)
 
 [Sicherheits- und Zuverlässigkeitskonzepte (safety and reliability concepts)](Sicherheitskonzepte.html)
