@@ -13518,7 +13518,7 @@ $$
 \end{align}<p>Wir berechnen nun das Integral über $\epsilon_{zz}$ von $z=\infty$ bis zu einer Tiefe $\bar{z}$, also:</p>
 $$
     u_z(r,\bar{z}) = \frac{3F_z}{2\pi E} \int \limits_{\bar{z}}^{\infty} \frac{1}{R^2} \left[ \frac{z^3}{R^3} - \nu \left( \frac{r^2 z}{R^3} - \frac{1-2\nu}{3} \frac{z}{R} \right) \right] \text{d}z
-$$<p>Dazu definieren wir in \texttt{sympy} den integranden \text{eps} (ohne konstanten Vorfaktor) und den Radius R:</p>
+$$<p>Dazu definieren wir in <code>sympy</code> den Integranden eps (ohne konstanten Vorfaktor) und den Radius R:</p>
 
 </div>
 </div>
@@ -13860,7 +13860,7 @@ $$<p>mit $R = \sqrt{a^2 + b^2 + t^2}$.</p>
   </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Oberflächennah anstehende sehr steife Baugrundschichten verringern die auftretenden Setzungen also sehr stark. Aufgrund der Spannungsausbreitung im Untergrund tragen tiefere Schichten immer weniger zum Setzungsbetrag bei. Es lässt sich also die Existenz einer Grenztiefe für die Setzungsberechnung erwarten. Dazu das nächste Mal mehr.</p>
+<p>Oberflächennah anstehende sehr steife Baugrundschichten verringern die auftretenden Setzungen also sehr stark. Aufgrund der Spannungsausbreitung im Untergrund tragen tiefere Schichten immer weniger zum Setzungsbetrag bei. Zudem nimmt die Steifigkeit des Bodens mit der Tiefe zu. Die Schersteifigkeit bei sehr kleinen Deformationen ist zudem ebenfalls höher, als aus Versuchen mit größeren Deformationen zu erwarten wäre. Es lässt sich also die Existenz einer Grenztiefe für die Setzungsberechnung erwarten. Dazu das nächste Mal mehr.</p>
 
 </div>
 </div>
@@ -13997,7 +13997,7 @@ $$<p>auch mit Hilfe des dimensionslosen Beiwertes $f_\text{R}$ formulieren:</p>
     \right] + 
     \frac{(1-\nu-2\nu^2)}{2 b \pi} t \arctan \left( \frac{ab}{zR} \right)
 \end{align*}<p>wobei die Dicke der zusammendrückbaren Schicht hier mit $z$ bezeichnet wurde.</p>
-<p>Für die baupraktische Berechnung wird nun ein Rechenmodul $E^*$ eingeführt, der die Zusammendrückbarkeit des Materials charakterisiert. Für homogene Verhältnisse kann $E^* = E/(1-\nu^2)$ abgeleitet werden. Allerdings hat diese Beziehung praktisch kaum Bedeutung und $E^*$ wird aus anderen Überlegungen ermittelt. Setzt man in die obigen Beziehungen $\nu \leftarrow 0$ und $E \leftarrow E^*$, so gelangt man zu folgender Formulierung mit der beiwertbasierten Beziehung, die innerhalb der Lastfläche mit ausreichender Genauigkeit Verwendung findet:</p>
+<p>Für die baupraktische Berechnung wird nun ein Rechenmodul $E^*$ eingeführt, der die Zusammendrückbarkeit des Materials charakterisiert. Für homogene Verhältnisse kann $E^* = E/(1-\nu^2)$ abgeleitet werden. Allerdings hat diese Beziehung praktisch kaum Bedeutung und $E^*$ wird aus anderen Überlegungen ermittelt. Setzt man in die obigen Beziehungen $\nu \leftarrow 0$ und $E \leftarrow E^*$ bzw. verschiebt man den Faktor $(1-\nu^2)$ aus der Beiwertdefinition in den Vorfaktor, so gelangt man zu folgender Formulierung mit der beiwertbasierten Beziehung, die innerhalb der Lastfläche mit ausreichender Genauigkeit Verwendung findet:</p>
 \begin{align*}
     s &amp;= \frac{q_0 b f_\text{R}}{E^*}
     \\
