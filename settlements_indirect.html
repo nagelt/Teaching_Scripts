@@ -13557,6 +13557,7 @@ $$<p>Die folgende Abbildung illustriert zunächst die Abweichung des Sekantenmod
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
 <span class="n">plot_secant_tangent</span><span class="p">()</span>
 </pre></div>
 
@@ -13780,6 +13781,101 @@ $$<p><strong>Aufgabe:</strong> Wie viele Schichten sind als Einteilung in diesem
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Zum-Steifemodul-in-den-&#220;bungsaufgaben">Zum Steifemodul in den &#220;bungsaufgaben<a class="anchor-link" href="#Zum-Steifemodul-in-den-&#220;bungsaufgaben">&#182;</a></h3><p>Der Tangentenmodul</p>
+$$
+    E_\text{s} = \frac{\text{d}\sigma'}{\text{d}\epsilon} = E_\text{ref} \left(\frac{\sigma'}{\sigma_\text{ref}}\right)^{\omega_\text{e}}
+$$<p>kann durch Integration zwischen dem Ausgangs- und dem belasteten Zustand in einen Sekantenmodul überführt werden. Dazu nutzen wir die folgenden definitionsgemäßen Zusammenhänge</p>
+$$
+    E_\text{s}^\text{sec} = \frac{\Delta \sigma}{\Delta \epsilon} = \frac{\int \limits_{\sigma_0}^{\sigma_0 + \Delta \sigma} \text{d}\sigma}{\int \limits_{\epsilon_0}^{\epsilon_0 + \Delta \epsilon} \text{d}\epsilon}
+$$<p>Um das zum Spannungsinkrement gehörige Stauchungsinkrement zu berechnen, formen wir das entsprechende Integral unter Verwendung der Definition des Tangentenmoduls auf ein Spannungsintegral um:</p>
+\begin{align}
+    \int \limits_{\epsilon_0}^{\epsilon_0 + \Delta \epsilon} \text{d}\epsilon &amp;= \int \limits_{\sigma_0}^{\sigma_0 + \Delta \sigma} E_\text{s}^{-1} \text{d}\sigma
+    \\
+    &amp;= \int \limits_{\sigma_0}^{\sigma_0 + \Delta \sigma} E_\text{ref}^{-1} \left(\frac{\sigma'}{\sigma_\text{ref}}\right)^{-\omega_\text{e}} \text{d}\sigma
+    \\
+    &amp;=
+    \begin{cases}
+    \frac{\sigma_\text{ref}}{(1-\omega_\text{e})E_\text{ref}} \left[ \left(\frac{\sigma'}{\sigma_\text{ref}}\right)^{1-\omega_\text{e}} \right]_{\sigma_0}^{\sigma_0+\Delta \sigma} &amp; \text{if } \omega_\text{e} \neq 1
+    \\
+    \frac{\sigma_\text{ref}}{E_\text{ref}} \left[ \ln \left(\frac{\sigma'}{\sigma_\text{ref}}\right) \right]_{\sigma_0}^{\sigma_0+\Delta \sigma} &amp; \text{if } \omega_\text{e} = 1
+    \end{cases}
+    \\
+    &amp;=
+    \begin{cases}
+    \frac{\sigma_\text{ref}}{(1-\omega_\text{e})E_\text{ref}} \left[ \left(\frac{\sigma_0+\Delta \sigma}{\sigma_\text{ref}}\right)^{1-\omega_\text{e}} - \left(\frac{\sigma_0}{\sigma_\text{ref}}\right)^{1-\omega_\text{e}} \right] &amp; \text{if } \omega_\text{e} \neq 1
+    \\
+    \frac{\sigma_\text{ref}}{E_\text{ref}} \ln \left(\frac{\sigma_0+\Delta \sigma}{\sigma_0}\right) &amp; \text{if } \omega_\text{e} = 1
+    \end{cases}
+\end{align}<p>Damit ergibt sich für den Sekantenmodul folgender Ausdruck:</p>
+$$
+    E_\text{s}^\text{sec} = \begin{cases}
+    \frac{\Delta \sigma}{\frac{\sigma_\text{ref}}{(1-\omega_\text{e})E_\text{ref}} \left[ \left(\frac{\sigma_0+\Delta \sigma}{\sigma_\text{ref}}\right)^{1-\omega_\text{e}} - \left(\frac{\sigma_0}{\sigma_\text{ref}}\right)^{1-\omega_\text{e}} \right]} &amp; \text{if } \omega_\text{e} \neq 1
+    \\
+    \frac{\Delta \sigma}{\frac{\sigma_\text{ref}}{E_\text{ref}} \ln \left(\frac{\sigma_0+\Delta \sigma}{\sigma_0}\right)} &amp; \text{if } \omega_\text{e} = 1
+    \end{cases}
+$$<p>Die obige Herleitung ist hier nur der Vollständigkeit halber angegeben. In den Übungsaufgaben werden folgende vereinfachte Zugänge verwendet:</p>
+<ul>
+<li>Vorgegebenes Spannungs-Setzungs/Stauchungsdiagramm aus dem Oedometerversuch, aus dem eine graphische Bestimmung (siehe obige Abbildung) des Rechenmoduls aus den gegebenen Spannungspunkten möglich ist</li>
+<li>Vorgegebener Zusammenhang zwischen dem zu verwendenden Rechenmodul und der Tiefe</li>
+<li>Auswertung des Rechenmoduls am Schichtmittelpunkt als Tangentenmodul (siehe folgender Vergleich)</li>
+<li>Verwendung konstanter Rechenmoduln aus Rückrechnung von Feldversuchen</li>
+</ul>
+<p>Die folgende Tabelle vergleicht die Rechenmoduln bei Verwendung der Sekantenformel $E_\text{s}^\text{sec}$ und der Tangentenapproximation im Spannungsmittelpunkt, also</p>
+$$
+    E_\text{s}(\sigma_0 + \Delta \sigma/2) = E_\text{ref} \left(\frac{\sigma_0 + \Delta \sigma/2}{\sigma_\text{ref}}\right)^{\omega_\text{e}}
+$$
+</div>
+</div>
+</div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="c1">#%run plot_functions/settlements_plots.ipynb</span>
+<span class="n">interactive_moduli_layers</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+
+
+  <div class="output_subarea output_widget_view ">
+    <button class="js-nbinteract-widget">
+      Loading widgets...
+    </button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wir erkennen eine sehr gute Übereinstimmung mit Ausnahme oberflächennaher Schichten. Dieses Ergebnis bestätigt rechnerisch die weiter oben graphischen Zusammenhänge.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Verdrehungen-bei-au&#223;ermittiger-lotrechter-Belastung">Verdrehungen bei au&#223;ermittiger lotrechter Belastung<a class="anchor-link" href="#Verdrehungen-bei-au&#223;ermittiger-lotrechter-Belastung">&#182;</a></h2><p>Setzungsberechnungen mit lotrechten Belastungen dürfen mit ebenen, d.h. linearen, Sohlspannungsverteilungen berechnet werden. Die folgende Abbildung stellt den 2D Fall dar (einachsig exzentrische Last). Durch das Zusammenspiel von Exzentrizität, Einbindetiefe und den Kernweiten kommt es zu mehr oder weniger komplexen Spannungsfiguren. Diese lassen sich durch Superposition in einfachere Spannungsverteilungen mit rechteckigen oder dreieckigen Querschnitten zerlegen, für die wir die $i$-Tafeln bereits kennen gelernt haben.</p>
