@@ -14300,7 +14300,7 @@ $$<p>Diese Gleichung beschreibt eine Ellipse.</p>
 \begin{align}
     V &amp;= \int \limits_A \sigma_0\,\text{d}A
     \\
-    V e_x = M_y &amp;= \int \limits_A \sigma_0 x\,\text{d}A
+    V e_x = -M_y &amp;= \int \limits_A \sigma_0 x\,\text{d}A
     \\
     V e_y = M_x &amp;= \int \limits_A \sigma_0 y\,\text{d}A
 \end{align}<p>Die Beschränkung auf ebene Verteilungen liefert folgende Beziehung für die Spannungsverteilung</p>
@@ -14320,17 +14320,17 @@ $$<p>Diese Gleichung beschreibt eine Ellipse.</p>
     \\
     &amp;= \bar{\sigma}_0 A
     \\
-    V e_x = M_y &amp;= \int \limits_A \sigma_0 x\,\text{d}A
+    V e_x = -M_y &amp;= \int \limits_A \sigma_0 x\,\text{d}A
     \\
     &amp;= \bar{\sigma}_0 \int \limits_{y} \int \limits_{x} x \text{d}x\,\text{d}y + \tan \alpha_x \int \limits_{y} \int \limits_{x} x^2\,\text{d}x\,\text{d}y + \tan \alpha_y \int \limits_{y} \int \limits_{x} xy\,\text{d}x\,\text{d}y
     \\
-    &amp;= \tan \alpha_x I_y + \tan \alpha_y I_{xy}
+    &amp;= \tan \alpha_x I_y - \tan \alpha_y I_{xy}
     \\
     V e_y = M_x &amp;= \int \limits_A \sigma_0 y\,\text{d}A
     \\
     &amp;= \bar{\sigma}_0 \int \limits_{y} \int \limits_{x} y \text{d}x\,\text{d}y + \tan \alpha_x \int \limits_{y} \int \limits_{x} xy\,\text{d}x\,\text{d}y + \tan \alpha_y \int \limits_{y} \int \limits_{x} y^2\,\text{d}x\,\text{d}y
     \\
-    &amp;= \tan \alpha_x I_{xy} + \tan \alpha_y I_{x}
+    &amp;= -\tan \alpha_x I_{xy} + \tan \alpha_y I_{x}
 \end{align}
 </div>
 </div>
@@ -14345,8 +14345,8 @@ $$
 \end{pmatrix}
 =
 \begin{pmatrix}
-    I_{xy} &amp; I_x\\
-    I_y &amp; I_{xy}
+    -I_{xy} &amp; I_x\\
+    -I_y &amp; I_{xy}
 \end{pmatrix}
 \begin{pmatrix}
     \tan \alpha_x\\
@@ -14385,8 +14385,8 @@ $$<p>und wir lösen nach den unbekannten Anstiegen auf:</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">RHS</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([</span><span class="n">Mx</span><span class="p">,</span> <span class="n">My</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">Ixy</span><span class="p">,</span> <span class="n">Ix</span><span class="p">],</span>
-              <span class="p">[</span><span class="n">Iy</span><span class="p">,</span> <span class="n">Ixy</span><span class="p">]])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="n">Ixy</span><span class="p">,</span> <span class="n">Ix</span><span class="p">],</span>
+              <span class="p">[</span><span class="o">-</span><span class="n">Iy</span><span class="p">,</span> <span class="n">Ixy</span><span class="p">]])</span>
 </pre></div>
 
     </div>
@@ -14422,7 +14422,7 @@ $$<p>und wir lösen nach den unbekannten Anstiegen auf:</p>
 
 
 <div class="output_latex output_subarea output_execute_result">
-$\displaystyle \left[\begin{matrix}\frac{I_{x} M_{y} - I_{xy} M_{x}}{I_{x} I_{y} - I_{xy}^{2}}\\\frac{- I_{xy} M_{y} + I_{y} M_{x}}{I_{x} I_{y} - I_{xy}^{2}}\end{matrix}\right]$
+$\displaystyle \left[\begin{matrix}\frac{- I_{x} M_{y} + I_{xy} M_{x}}{I_{x} I_{y} - I_{xy}^{2}}\\\frac{- I_{xy} M_{y} + I_{y} M_{x}}{I_{x} I_{y} - I_{xy}^{2}}\end{matrix}\right]$
 </div>
 
 </div>
@@ -14435,11 +14435,11 @@ $\displaystyle \left[\begin{matrix}\frac{I_{x} M_{y} - I_{xy} M_{x}}{I_{x} I_{y}
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Die Sohldruckverteilung nach dem Spannungstrapezverfahren liefert also</p>
 $$
-    \sigma_0(x,y) = \frac{V}{A} + \frac{I_x M_y - I_{xy}M_x}{I_x I_y - I_{xy}^2} x + \frac{I_y M_x - I_{xy}M_y}{I_x I_y - I_{xy}^2} y
+    \sigma_0(x,y) = \frac{V}{A} + \frac{I_{xy}M_x - I_x M_y}{I_x I_y - I_{xy}^2} x + \frac{I_y M_x - I_{xy}M_y}{I_x I_y - I_{xy}^2} y
 $$<p>Diese Gleichung ist analog zur Normalspannung im Querschnitt schlanker gerader Balken unter Biege- und Normalkraftbeanspruchung.</p>
 <p>Sind die $x$- und $y$-Achsen Hauptachsen der Fundamentfläche, dann verschwinden die Flächendeviationsmomente $I_{xy}$ und wir erhalten</p>
 $$
-    \sigma_0(x,y) = \frac{V}{A} + \frac{M_y}{I_y} x + \frac{M_x}{I_x} y
+    \sigma_0(x,y) = \frac{V}{A} - \frac{M_y}{I_y} x + \frac{M_x}{I_x} y
 $$
 </div>
 </div>
