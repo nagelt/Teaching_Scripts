@@ -1,6 +1,10 @@
-Here's a list of simple interactive teaching scripts. Comments are welcome.
+Here is a list of simple interactive teaching scripts. Comments and contributions are welcome.
 
 A lot of the content is in German, as the material is used in lectures at a German university.
+
+Related publication:
+
+Kern, D., & Nagel, T. (2022). An experimental numerics approach to the terrestrial brachistochrone. GAMM Archive for Students, 4(1), 29–35. https://doi.org/10.14464/gammas.v4i1.512
 
 
 [Demo script](demo_script.html)
