@@ -21,6 +21,8 @@ If one of the specific scripts is of interest, you can launch them individually 
 
 [Demo script](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=demo_script.ipynb)
 
+[Rechengenauigkeit (significant digits)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=accuracy.ipynb)
+
 [Basic quantities](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=basic_quantities.ipynb)
 
 [Specific surface](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=grain_size_demo.ipynb)
