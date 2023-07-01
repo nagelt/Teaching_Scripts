@@ -31,3 +31,5 @@ See https://nagelt.github.io
 **Related publication:**
 
 Kern, D., & Nagel, T. (2022). An experimental numerics approach to the terrestrial brachistochrone. GAMM Archive for Students, 4(1), 29–35. https://doi.org/10.14464/gammas.v4i1.512
+
+Nagel, T., Gerasimov, T., & Kern, D. (2023). Neighbourhood watch in mechanics: non-local models and convolution. https://arxiv.org/abs/2306.15674
