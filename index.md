@@ -4,9 +4,11 @@ A lot of the content is in German, as the material is used in lectures at a Germ
 
 **Note:** I've transitioned from interactive html pages created with nbinteract to a direct usage of mybinder. Starting any of the scripts may take a few minutes depending on when the last built took place.
 
-**Related publication:**
+**Related publications:**
 
 Kern, D., & Nagel, T. (2022). An experimental numerics approach to the terrestrial brachistochrone. GAMM Archive for Students, 4(1), 29–35. https://doi.org/10.14464/gammas.v4i1.512
+
+Nagel, T., Gerasimov, T., & Kern, D. (2023). Neighbourhood watch in mechanics: non-local models and convolution. https://arxiv.org/abs/2306.15674
 
 
 **All scripts**
