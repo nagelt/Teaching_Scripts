@@ -37,25 +37,25 @@ If one of the specific scripts is of interest, you can launch them individually 
 
 [Hauptspannungen (principal stresses)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Hauptspannungen.ipynb)
 
-[Mohr's circle and safety factors](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Mohrs_circle.ipynb)
+[Mohr'scher Spannungskreis und Sicherheitsfaktoren (Mohr's circle and safety factors)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Mohrs_circle.ipynb)
 
 [Triaxialversuch (triaxial test)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Triaxialversuch.ipynb)
 
-[Mohr's circle and earth pressures](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Mohrs_circle_K0.ipynb)
+[Mohr'scher Spannungskreis und Erddruck (Mohr's circle and earth pressures)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Mohrs_circle_K0.ipynb)
 
-[Compressibility of pore fluids](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=compressibility_pore_fluid.ipynb)
+[Kompressibilität von Porenfluiden (Compressibility of pore fluids)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=compressibility_pore_fluid.ipynb)
 
-[Consolidation theory -- instantaneous load](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=consolidation_analytical.ipynb)
+[Konsolidation unter instantanen Lasten (Consolidation theory -- instantaneous load)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=consolidation_analytical.ipynb)
 
-[Consolidation theory -- ramp load](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=consolidation_analytical_ramp.ipynb)
+[Konsolidation unter monotonen Lasten (Consolidation theory -- ramp load)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=consolidation_analytical_ramp.ipynb)
 
-[Consolidation of layered soil -- finite difference scheme](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Terzaghi_FD.ipynb)
+[Konsolidation geschichteter Böden / Finite Differenzen (Consolidation of layered soil -- finite difference scheme)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Terzaghi_FD.ipynb)
 
-[Active earth pressure, Coulomb](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=active_earth_pressure.ipynb)
+[Aktiver Erddruck nach Coulomb (Active earth pressure, Coulomb)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=active_earth_pressure.ipynb)
 
-[Passive earth pressure, Coulomb](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=passive_earth_pressure.ipynb)
+[Passiver Erddruck nach Coulomb (Passive earth pressure, Coulomb)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=passive_earth_pressure.ipynb)
 
-[Earth pressure, Rankine](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Rankine.ipynb)
+[Erddruck nach Rankine (Earth pressure, Rankine)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Rankine.ipynb)
 
 [Sicherheits- und Zuverlässigkeitskonzepte (safety and reliability concepts)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Sicherheitskonzepte.ipynb)
 
@@ -76,6 +76,8 @@ If one of the specific scripts is of interest, you can launch them individually 
 [Sohlspannungen, Kernweiten, Spannungstrapeze, Bettungsmodulverfahren, Steifemodulverfahern (footing pressures, core ranges, elastic bedding and constrained modulus method for beams and plates)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=sohldruck.ipynb)
 
 [Spannungen unter Streifenlasten -- starr und biegeschlaff (stresses under strip foundations)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Foundations_OGS.ipynb)
+
+[Spannungen um Hohlräume im anisotropen Spannungsfeld (stresses around circular excavations in anisotropic stress fields)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Dilatancy_around_circular_excavation.ipynb)
 
 [Setzungen -- Einführung in direkte Methoden (settlements, introduction to direct methods)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=settlements.ipynb)
 
