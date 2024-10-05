@@ -1,3 +1,4 @@
+import os
 import json
 
 def replace_patterns_and_backslashes_in_ipynb(file_path):
@@ -9,7 +10,7 @@ def replace_patterns_and_backslashes_in_ipynb(file_path):
     def replace_patterns_in_string(s):
         # Replace label=' with label=r'
         s = s.replace("label='", "label=r'")
-        # Replace label(" with label(r"
+        # Replace label(' with label(r'
         s = s.replace("label('", "label(r'")
         # Replace label="" with label=r"
         s = s.replace('label="', 'label=r"')
@@ -49,4 +50,15 @@ def replace_patterns_and_backslashes_in_ipynb(file_path):
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(notebook, f, ensure_ascii=False, indent=2)
     
-    print("All replacements have been made successfully.")
+    print(f"All replacements have been made successfully in {file_path}.")
+
+# Function to apply the script to all .ipynb files in the current folder
+def process_all_ipynb_files_in_folder(folder_path):
+    for file_name in os.listdir(folder_path):
+        if file_name.endswith('.ipynb'):
+            file_path = os.path.join(folder_path, file_name)
+            replace_patterns_and_backslashes_in_ipynb(file_path)
+
+# Run the script for all .ipynb files in the current directory
+#folder_path = '.'  # You can specify another folder path if needed
+#process_all_ipynb_files_in_folder(folder_path)
