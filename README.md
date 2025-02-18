@@ -34,4 +34,4 @@ Kern, D., & Nagel, T. (2022). An experimental numerics approach to the terrestri
 
 Kern, D., & Nagel, T. (2024). The essence of Biot waves in an oscillator with two degrees of freedom. GAMM Archive for Students, 6(1). https://doi.org/10.14464/gammas.v6i1.663
 
-Nagel, T., Gerasimov, T., & Kern, D. (2023). Neighbourhood watch in mechanics: non-local models and convolution. https://arxiv.org/abs/2306.15674
+Nagel, T., Gerasimov, T., Remes, J., & Kern, D. (2025). Neighborhood Watch in Mechanics: Nonlocal Models and Convolution. SIAM Review, 67(1), 176–193. https://doi.org/10.1137/22M1541721
