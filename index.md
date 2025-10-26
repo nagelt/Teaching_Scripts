@@ -88,3 +88,7 @@ If one of the specific scripts is of interest, you can launch them individually 
 [Grundbruch -- Vorüberlegungen](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Grundbruch.ipynb)
 
 [Einblicke in Materialmodelle (insights into material modelling)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=stress_paths.ipynb)
+
+[Verzweigungsprobleme und Stabilität](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=stability_bifurcation.ipynb)
+
+[Stabilität, Material (unfertig)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Slope_Stability_Control.ipynb)
