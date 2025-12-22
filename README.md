@@ -23,72 +23,72 @@ If you want to work with several scripts, launch the entire repository on mybind
 If one of the specific scripts is of interest, you can launch them individually via the links below.
 
 
-[Demo script](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=demo_script.ipynb)
+[Demo script](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/demo_script.ipynb)
 
-[Rechengenauigkeit (significant digits)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=accuracy.ipynb)
+[Rechengenauigkeit (significant digits)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/accuracy.ipynb)
 
-[Basic quantities](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=basic_quantities.ipynb)
+[Basic quantities](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/basic_quantities.ipynb)
 
-[Specific surface](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=grain_size_demo.ipynb)
+[Specific surface](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/grain_size_demo.ipynb)
 
-[Kornverteilungskurve (grain size distribution)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=kornverteilungskurve.ipynb)
+[Kornverteilungskurve (grain size distribution)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/kornverteilungskurve.ipynb)
 
-[Steifemodul, Oedometer](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Steifemodul.ipynb)
+[Steifemodul, Oedometer](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Steifemodul.ipynb)
 
-[Schnittreaktionen im einachsigen Druckversuch (reaction forces in uniaxial compression)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Schnittreaktionen.ipynb)
+[Schnittreaktionen im einachsigen Druckversuch (reaction forces in uniaxial compression)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Schnittreaktionen.ipynb)
 
-[Hauptspannungen (principal stresses)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Hauptspannungen.ipynb)
+[Hauptspannungen (principal stresses)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Hauptspannungen.ipynb)
 
-[Mohr'scher Spannungskreis und Sicherheitsfaktoren (Mohr's circle and safety factors)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Mohrs_circle.ipynb)
+[Mohr'scher Spannungskreis und Sicherheitsfaktoren (Mohr's circle and safety factors)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Mohrs_circle.ipynb)
 
-[Triaxialversuch (triaxial test)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Triaxialversuch.ipynb)
+[Triaxialversuch (triaxial test)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Triaxialversuch.ipynb)
 
-[Mohr'scher Spannungskreis und Erddruck (Mohr's circle and earth pressures)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Mohrs_circle_K0.ipynb)
+[Mohr'scher Spannungskreis und Erddruck (Mohr's circle and earth pressures)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Mohrs_circle_K0.ipynb)
 
-[Kompressibilität von Porenfluiden (Compressibility of pore fluids)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=compressibility_pore_fluid.ipynb)
+[Kompressibilität von Porenfluiden (Compressibility of pore fluids)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/compressibility_pore_fluid.ipynb)
 
-[Konsolidation unter instantanen Lasten (Consolidation theory -- instantaneous load)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=consolidation_analytical.ipynb)
+[Konsolidation unter instantanen Lasten (Consolidation theory -- instantaneous load)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/consolidation_analytical.ipynb)
 
-[Konsolidation unter monotonen Lasten (Consolidation theory -- ramp load)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=consolidation_analytical_ramp.ipynb)
+[Konsolidation unter monotonen Lasten (Consolidation theory -- ramp load)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/consolidation_analytical_ramp.ipynb)
 
-[Konsolidation geschichteter Böden / Finite Differenzen (Consolidation of layered soil -- finite difference scheme)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Terzaghi_FD.ipynb)
+[Konsolidation geschichteter Böden / Finite Differenzen (Consolidation of layered soil -- finite difference scheme)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Terzaghi_FD.ipynb)
 
-[Aktiver Erddruck nach Coulomb (Active earth pressure, Coulomb)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=active_earth_pressure.ipynb)
+[Aktiver Erddruck nach Coulomb (Active earth pressure, Coulomb)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/active_earth_pressure.ipynb)
 
-[Passiver Erddruck nach Coulomb (Passive earth pressure, Coulomb)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=passive_earth_pressure.ipynb)
+[Passiver Erddruck nach Coulomb (Passive earth pressure, Coulomb)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/passive_earth_pressure.ipynb)
 
-[Erddruck nach Rankine (Earth pressure, Rankine)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Rankine.ipynb)
+[Erddruck nach Rankine (Earth pressure, Rankine)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Rankine.ipynb)
 
-[Sicherheits- und Zuverlässigkeitskonzepte (safety and reliability concepts)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Sicherheitskonzepte.ipynb)
+[Sicherheits- und Zuverlässigkeitskonzepte (safety and reliability concepts)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Sicherheitskonzepte.ipynb)
 
-[Geländebruch, Sicherheit (slope failure, limit equilibrium, safety)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Sicherheit_Gelaendesprung.ipynb)
+[Geländebruch, Sicherheit (slope failure, limit equilibrium, safety)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Sicherheit_Gelaendesprung.ipynb)
 
-[Böschungsbruch, lamellenfrei, Isoasphalien (slope failure, slip circle)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=slope_stability.ipynb)
+[Böschungsbruch, lamellenfrei, Isoasphalien (slope failure, slip circle)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/slope_stability.ipynb)
 
-[Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=slope_failure.ipynb)
+[Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/slope_failure.ipynb)
 
-[Böschungsbruch, Kinematische Elemente Methode (slope failure, method of kinematic elements)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=KEM.ipynb)
+[Böschungsbruch, Kinematische Elemente Methode (slope failure, method of kinematic elements)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/KEM.ipynb)
 
-[Böschungsbruch, Kinematische Elemente Methode 2 (slope failure, method of kinematic elements 2)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=KEM_2.ipynb)
+[Böschungsbruch, Kinematische Elemente Methode 2 (slope failure, method of kinematic elements 2)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/KEM_2.ipynb)
 
-[Spannungen unter Zusatzbelastungen (stresses under loads)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=stresses_under_loads.ipynb)
+[Spannungen unter Zusatzbelastungen (stresses under loads)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/stresses_under_loads.ipynb)
 
-[Spannungen unter Flächenlasten -- Steinbrenner (stresses under loads 2)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=stresses_steinbrenner.ipynb)
+[Spannungen unter Flächenlasten -- Steinbrenner (stresses under loads 2)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/stresses_steinbrenner.ipynb)
 
-[Sohlspannungen, Kernweiten, Spannungstrapeze, Bettungsmodulverfahren, Steifemodulverfahern (footing pressures, core ranges, elastic bedding and constrained modulus method for beams and plates)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=sohldruck.ipynb)
+[Sohlspannungen, Kernweiten, Spannungstrapeze, Bettungsmodulverfahren, Steifemodulverfahern (footing pressures, core ranges, elastic bedding and constrained modulus method for beams and plates)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/sohldruck.ipynb)
 
-[Spannungen unter Streifenlasten -- starr und biegeschlaff (stresses under strip foundations)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Foundations_OGS.ipynb)
+[Spannungen unter Streifenlasten -- starr und biegeschlaff (stresses under strip foundations)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Foundations_OGS.ipynb)
 
-[Spannungen um Hohlräume im anisotropen Spannungsfeld (stresses around circular excavations in anisotropic stress fields)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Dilatancy_around_circular_excavation.ipynb)
+[Spannungen um Hohlräume im anisotropen Spannungsfeld (stresses around circular excavations in anisotropic stress fields)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Dilatancy_around_circular_excavation.ipynb)
 
-[Setzungen -- Einführung in direkte Methoden (settlements, introduction to direct methods)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=settlements.ipynb)
+[Setzungen -- Einführung in direkte Methoden (settlements, introduction to direct methods)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/settlements.ipynb)
 
-[Setzungen -- Einführung in indirekte Methoden (settlements, introduction to indirect methods)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=settlements_indirect.ipynb)
+[Setzungen -- Einführung in indirekte Methoden (settlements, introduction to indirect methods)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/settlements_indirect.ipynb)
 
-[Grundbruch -- Vorüberlegungen](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Grundbruch.ipynb)
+[Grundbruch -- Vorüberlegungen](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Grundbruch.ipynb)
 
-[Einblicke in Materialmodelle (insights into material modelling)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=stress_paths.ipynb)
+[Einblicke in Materialmodelle (insights into material modelling)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/stress_paths.ipynb)
 
-[Verzweigungsprobleme und Stabilität](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=stability_bifurcation.ipynb)
+[Verzweigungsprobleme und Stabilität](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/stability_bifurcation.ipynb)
 
-[Stabilität, Material (unfertig)](https://mybinder.org/v2/gh/nagelt/Teaching_scripts/HEAD?labpath=Slope_Stability_Control.ipynb)
+[Stabilität, Material (unfertig)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Slope_Stability_Control.ipynb)
