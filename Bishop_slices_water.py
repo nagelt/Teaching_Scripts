@@ -736,8 +736,8 @@ def plot_slope_with_searchgrid_and_isoasphals(cfg: ModelConfig, result: SlipCirc
     ax.set_aspect("equal", adjustable="box")
     ax.grid(True, alpha=0.25)
     ax.legend(loc="best", fontsize=9)
-    plt.tight_layout()
-    plt.show()
+    fig.tight_layout()
+    fig.savefig("Bishop_slices_water.pdf")
 
 
 # In[9]:
