@@ -67,7 +67,7 @@ If one of the specific scripts is of interest, you can launch them individually 
 
 [Böschungsbruch, lamellenfrei, Isoasphalien (slope failure, slip circle)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/slope_stability.ipynb)
 
-[Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/slope_failure.ipynb)
+[Böschungsbruch, Lamellenverfahren (slope failure, method of slices)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Bishop_slices_water.py)
 
 [Böschungsbruch, Kinematische Elemente Methode (slope failure, method of kinematic elements)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/KEM.ipynb)
 
