@@ -24,6 +24,7 @@ class ModelConfig:
     q_start: float | None = None
     q_end: float | None = None
     y_w: float | None = None
+    water_table_points: tuple[tuple[float, float], ...] | None = None
     n_slices: int = 30
     max_iter: int = 200
     tol: float = 1e-6
@@ -66,6 +67,38 @@ def ground_y(x, h, beta_rad):
     y[mask_slope] = x[mask_slope] * np.tan(beta_rad)
     y[x > x_crest] = h
     return y
+
+
+# ============================================================
+# Water table geometry
+# ============================================================
+def validate_model_config(cfg: ModelConfig):
+    if cfg.y_w is not None and cfg.water_table_points is not None:
+        raise ValueError("Use either y_w or water_table_points, not both.")
+    if cfg.water_table_points is not None:
+        if len(cfg.water_table_points) < 2:
+            raise ValueError("water_table_points must contain at least two (x, y) points.")
+        xs = [p[0] for p in cfg.water_table_points]
+        if any(xs[i] >= xs[i + 1] for i in range(len(xs) - 1)):
+            raise ValueError("water_table_points x coordinates must be strictly increasing.")
+
+
+def water_table_y(x, cfg: ModelConfig):
+    """
+    Piecewise-linear water table defined by cfg.water_table_points, or a
+    horizontal level y_w if provided. Outside the support-point range,
+    endpoint values are held constant.
+    """
+    x = np.asarray(x, dtype=float)
+
+    if cfg.water_table_points is not None:
+        pts = np.asarray(cfg.water_table_points, dtype=float)
+        return np.interp(x, pts[:, 0], pts[:, 1])
+
+    if cfg.y_w is not None:
+        return np.full_like(x, cfg.y_w, dtype=float)
+
+    return None
 
 
 # ============================================================
@@ -135,15 +168,20 @@ def loaded_width_per_slice(x_left_edges, x_right_edges, q_start, q_end):
     return np.maximum(overlap, 0.0)
 
 
-def compute_slice_areas_with_gwt(y_ground_edges, y_slip_edges, dx, y_w):
-    h_unsat_left = np.maximum(y_ground_edges[:-1] - np.maximum(y_w, y_slip_edges[:-1]), 0.0)
-    h_unsat_right = np.maximum(y_ground_edges[1:] - np.maximum(y_w, y_slip_edges[1:]), 0.0)
+def compute_slice_areas_with_gwt(y_ground_edges, y_slip_edges, dx, y_w_edges):
+    """
+    y_w_edges: water-table elevation evaluated at slice edges.
+    """
+    y_w_edges = np.asarray(y_w_edges, dtype=float)
 
-    h_sat_left = np.maximum(np.minimum(y_w, y_ground_edges[:-1]) - y_slip_edges[:-1], 0.0)
-    h_sat_right = np.maximum(np.minimum(y_w, y_ground_edges[1:]) - y_slip_edges[1:], 0.0)
+    h_unsat_left = np.maximum(y_ground_edges[:-1] - np.maximum(y_w_edges[:-1], y_slip_edges[:-1]), 0.0)
+    h_unsat_right = np.maximum(y_ground_edges[1:] - np.maximum(y_w_edges[1:], y_slip_edges[1:]), 0.0)
 
-    h_water_top_left = np.maximum(y_w - y_ground_edges[:-1], 0.0)
-    h_water_top_right = np.maximum(y_w - y_ground_edges[1:], 0.0)
+    h_sat_left = np.maximum(np.minimum(y_w_edges[:-1], y_ground_edges[:-1]) - y_slip_edges[:-1], 0.0)
+    h_sat_right = np.maximum(np.minimum(y_w_edges[1:], y_ground_edges[1:]) - y_slip_edges[1:], 0.0)
+
+    h_water_top_left = np.maximum(y_w_edges[:-1] - y_ground_edges[:-1], 0.0)
+    h_water_top_right = np.maximum(y_w_edges[1:] - y_ground_edges[1:], 0.0)
 
     area_unsat = 0.5 * (h_unsat_left + h_unsat_right) * dx
     area_sat = 0.5 * (h_sat_left + h_sat_right) * dx
@@ -151,7 +189,7 @@ def compute_slice_areas_with_gwt(y_ground_edges, y_slip_edges, dx, y_w):
     return area_unsat, area_sat, area_water_top
 
 
-def slice_top_water_force_components(x_left_edges, x_right_edges, y_ground_edges, y_w, gamma_w):
+def slice_top_water_force_components(x_left_edges, x_right_edges, y_ground_edges, y_w_edges, gamma_w):
     xL = x_left_edges
     xR = x_right_edges
     yL = y_ground_edges[:-1]
@@ -161,8 +199,9 @@ def slice_top_water_force_components(x_left_edges, x_right_edges, y_ground_edges
     dy_top = yR - yL
     s_top = np.sqrt(dx_top**2 + dy_top**2)
 
-    hL = np.maximum(y_w - y_ground_edges[:-1], 0.0)
-    hR = np.maximum(y_w - y_ground_edges[1:], 0.0)
+    y_w_edges = np.asarray(y_w_edges, dtype=float)
+    hL = np.maximum(y_w_edges[:-1] - y_ground_edges[:-1], 0.0)
+    hR = np.maximum(y_w_edges[1:] - y_ground_edges[1:], 0.0)
 
     Pn = gamma_w * 0.5 * (hL + hR) * s_top
 
@@ -174,9 +213,13 @@ def slice_top_water_force_components(x_left_edges, x_right_edges, y_ground_edges
     Fy = Pn * ny_in
     Fv = -Fy  # downward positive
 
-    x_cp = xL + 0.5 * dx_top
-    y_cp = yL + 0.5 * dy_top
-    return Fv, Fx, Fy, x_cp, y_cp
+    # Center of pressure along the top segment for linearly varying pressure.
+    denom = hL + hR
+    #frac = np.where(denom > 1e-12, (hL + 2.0 * hR) / (3.0 * denom), 0.5)
+    frac = 0.5
+    x_cp = xL + frac * dx_top
+    y_cp = yL + frac * dy_top
+    return Fv, Fx, Fy, x_cp, y_cp, hL, hR
 
 
 def slice_base_pore_force_components(x_mid, y_slip_mid, xc, yc, U):
@@ -238,8 +281,12 @@ def build_slice_loads(geom, cfg: ModelConfig, xc, yc):
     y_slip_edges = geom["y_slip_edges"]
     y_slip_mid = geom["y_slip_mid"]
     x_edges = geom["x_edges"]
+    x_mid = geom["x_mid"]
 
-    if cfg.y_w is None:
+    y_w_edges = water_table_y(x_edges, cfg)
+    y_w_mid = water_table_y(x_mid, cfg)
+
+    if y_w_edges is None:
         heights_left = y_ground_edges[:-1] - y_slip_edges[:-1]
         heights_right = y_ground_edges[1:] - y_slip_edges[1:]
         areas = 0.5 * (heights_left + heights_right) * dx
@@ -255,17 +302,19 @@ def build_slice_loads(geom, cfg: ModelConfig, xc, yc):
         u = np.zeros_like(W_soil)
         area_unsat = areas
         area_sat = np.zeros_like(areas)
+        h_water_top_left = np.zeros_like(areas)
+        h_water_top_right = np.zeros_like(areas)
     else:
-        area_unsat, area_sat, _ = compute_slice_areas_with_gwt(y_ground_edges, y_slip_edges, dx, cfg.y_w)
+        area_unsat, area_sat, _ = compute_slice_areas_with_gwt(y_ground_edges, y_slip_edges, dx, y_w_edges)
         total_soil_area = area_unsat + area_sat
         if np.any(total_soil_area <= 0.0):
             return None
 
         W_soil = cfg.gamma_unsat * area_unsat + cfg.gamma_sat * area_sat
-        W_water_top_v, Fx_top, Fy_top, x_cp_top, y_cp_top = slice_top_water_force_components(
-            x_edges[:-1], x_edges[1:], y_ground_edges, cfg.y_w, cfg.gamma_w
+        W_water_top_v, Fx_top, Fy_top, x_cp_top, y_cp_top, h_water_top_left, h_water_top_right = slice_top_water_force_components(
+            x_edges[:-1], x_edges[1:], y_ground_edges, y_w_edges, cfg.gamma_w
         )
-        pressure_head = np.maximum(cfg.y_w - y_slip_mid, 0.0)
+        pressure_head = np.maximum(y_w_mid - y_slip_mid, 0.0)
         u = cfg.gamma_w * pressure_head
 
     if cfg.q > 0.0 and cfg.q_start is not None and cfg.q_end is not None and cfg.q_end > cfg.q_start:
@@ -280,6 +329,10 @@ def build_slice_loads(geom, cfg: ModelConfig, xc, yc):
     M_total = M_vertical + M_horizontal
 
     return {
+        "y_w_edges": y_w_edges,
+        "y_w_mid": y_w_mid,
+        "h_water_top_left": h_water_top_left,
+        "h_water_top_right": h_water_top_right,
         "area_unsat": area_unsat,
         "area_sat": area_sat,
         "W_soil": W_soil,
@@ -386,6 +439,9 @@ def build_slice_dataframe(result: SlipCircleResult, cfg: ModelConfig):
         "y_slip_left": details["y_slip_edges"][:-1],
         "y_slip_right": details["y_slip_edges"][1:],
         "y_slip_mid": details["y_slip_mid"],
+        "y_w_left": np.nan if details["y_w_edges"] is None else details["y_w_edges"][:-1],
+        "y_w_right": np.nan if details["y_w_edges"] is None else details["y_w_edges"][1:],
+        "y_w_mid": np.nan if details["y_w_mid"] is None else details["y_w_mid"],
         "alpha_rad": details["alpha"],
         "alpha_deg": np.degrees(details["alpha"]),
         "sin_alpha": details["sin_alpha"],
@@ -398,6 +454,8 @@ def build_slice_dataframe(result: SlipCircleResult, cfg: ModelConfig):
         "W_total_vertical": details["W"],
         "u": details["u"],
         "u_times_b": U,
+        "top_water_h_left": details["h_water_top_left"],
+        "top_water_h_right": details["h_water_top_right"],
         "Fx_top": details["Fx_top"],
         "Fy_top": details["Fy_top"],
         "x_cp_top": details["x_cp_top"],
@@ -474,6 +532,8 @@ def _evaluate_center(args):
 # Parallel grid search
 # ============================================================
 def search_critical_circle_grid_parallel(cfg: ModelConfig, search: SearchConfig):
+    validate_model_config(cfg)
+
     xc_vals = np.linspace(search.xc_range[0], search.xc_range[1], search.n_xc)
     yc_vals = np.linspace(search.yc_range[0], search.yc_range[1], search.n_yc)
     R_vals = np.linspace(search.R_range[0], search.R_range[1], search.n_R)
@@ -524,19 +584,17 @@ def _plot_search_grid_and_contours(ax, fig, xc_vals, yc_vals, F_center_grid):
             cs = ax.contour(Xc, Yc, mu_masked, levels=levels, linewidths=2.0,
                             cmap="coolwarm", linestyles="solid")
             ax.clabel(cs, inline=True, fontsize=14, fmt="%.2f", colors="black")
-            #cbar = fig.colorbar(cf, ax=ax, pad=0.02)
-            #cbar.set_label("Friction coefficient µ = 1/F")
 
     XX, YY = np.meshgrid(xc_vals, yc_vals)
     ax.plot(XX.ravel(), YY.ravel(), marker=".", linestyle="None", markersize=3, color="black", alpha=0.35, label="Search grid")
 
 
 def _plot_ground_water_and_surcharge(ax, cfg: ModelConfig, x_plot, y_ground, x_min, x_max, y_min, y_max):
-    if cfg.y_w is not None:
-        water_surface = np.full_like(x_plot, cfg.y_w)
-        mask_water = water_surface > y_ground
-        ax.fill_between(x_plot, y_ground, water_surface, where=mask_water, alpha=0.25, interpolate=True, label="Water above ground")
-        ax.plot([x_min, x_max], [cfg.y_w, cfg.y_w], linestyle="--", linewidth=1.8, label="Water level")
+    y_water_plot = water_table_y(x_plot, cfg)
+    if y_water_plot is not None:
+        mask_water = y_water_plot > y_ground
+        ax.fill_between(x_plot, y_ground, y_water_plot, where=mask_water, alpha=0.25, interpolate=True, label="Water above ground")
+        ax.plot(x_plot, y_water_plot, linestyle="--", linewidth=1.8, label="Water level")
 
     ax.plot(x_plot, y_ground, color="black", linewidth=2.2, label="Ground")
     ax.fill_between(x_plot, y_ground, y_min - 5 * cfg.h, color="white", alpha=0.85)
@@ -595,11 +653,8 @@ def _draw_arrow_with_scaled_head(ax, x0, y0, dx, dy, color, label=None, linewidt
 
 
 def _plot_water_force_arrows(ax, cfg: ModelConfig, result: SlipCircleResult, geom, water_force_stride=2):
-    if cfg.y_w is None:
-        return
-
     loads = build_slice_loads(geom, cfg, result.xc, result.yc)
-    if loads is None:
+    if loads is None or loads["y_w_edges"] is None:
         return
 
     Pn_top = np.sqrt(loads["Fx_top"] ** 2 + loads["Fy_top"] ** 2)
@@ -652,6 +707,8 @@ def _plot_water_force_arrows(ax, cfg: ModelConfig, result: SlipCircleResult, geo
 # Plot
 # ============================================================
 def plot_slope_with_searchgrid_and_isoasphals(cfg: ModelConfig, result: SlipCircleResult, xc_vals, yc_vals, F_center_grid, show_water_forces=True, water_force_stride=2):
+    validate_model_config(cfg)
+
     beta_rad = np.radians(cfg.beta_deg)
     x_crest = cfg.h / np.tan(beta_rad)
 
@@ -701,7 +758,7 @@ if __name__ == "__main__":
         q=30.0,
         q_start=9.5,
         q_end=12.5,
-        y_w=3.0,
+        water_table_points=(( -1.0, 2.0), (4.0, 2.0), (15.0, 3.0)),
         n_slices=80,
     )
 
@@ -738,6 +795,7 @@ if __name__ == "__main__":
             "mu": 1.0 / best.F,
             "n_slices": model.n_slices,
             "y_w": model.y_w,
+            "water_table_points": model.water_table_points,
             "q": model.q,
         }]).drop(columns=["points"])
 
