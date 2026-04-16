@@ -720,7 +720,7 @@ def plot_slope_with_searchgrid_and_isoasphals(cfg: ModelConfig, result: SlipCirc
     x_plot = np.linspace(x_min, x_max, 1200)
     y_ground = ground_y(x_plot, cfg.h, beta_rad)
 
-    fig, ax = plt.subplots(figsize=(18, 12))
+    fig, ax = plt.subplots(figsize=(8, 8))
     _plot_search_grid_and_contours(ax, fig, xc_vals, yc_vals, F_center_grid)
     _plot_ground_water_and_surcharge(ax, cfg, x_plot, y_ground, x_min, x_max, y_min, y_max)
     geom = _plot_critical_circle_and_slices(ax, cfg, result)
@@ -737,7 +737,7 @@ def plot_slope_with_searchgrid_and_isoasphals(cfg: ModelConfig, result: SlipCirc
     ax.grid(True, alpha=0.25)
     ax.legend(loc="best", fontsize=9)
     fig.tight_layout()
-    fig.savefig("Bishop_slices_water.pdf")
+    fig.savefig("Bishop_slices_water_up.pdf")
 
 
 # In[9]:
