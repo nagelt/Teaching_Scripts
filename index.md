@@ -94,3 +94,5 @@ If one of the specific scripts is of interest, you can launch them individually 
 [Verzweigungsprobleme und Stabilität](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/stability_bifurcation.ipynb)
 
 [Stabilität, Material (unfertig)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Slope_Stability_Control.ipynb)
+
+[Kippnachweis und Stabilität](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Kippnachweis.ipynb)
