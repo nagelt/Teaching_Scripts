@@ -96,3 +96,5 @@ If one of the specific scripts is of interest, you can launch them individually 
 [Stabilität, Material (unfertig)](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Slope_Stability_Control.ipynb)
 
 [Kippnachweis und Stabilität](https://nbviewer.org/github/nagelt/Teaching_Scripts/blob/HEAD/Kippnachweis.ipynb)
+
+[Saugspannungen, relative Luftfeuchte, Retention](Bentonit_Nomogramm.html)
